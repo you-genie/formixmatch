@@ -1,17 +1,19 @@
 import React from 'react';
-import {withStyles} from '@material-ui/core/styles/';
+import {makeStyles} from '@material-ui/core/styles/';
 import AppBar from '@material-ui/core/AppBar';
 import ToolBar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
+import InputBase from '@material-ui/core/InputBase';
 import MenuIcon from '@material-ui/icons/Menu';
+import SearchIcon from '@material-ui/icons/Search';
 
-const styles = (theme) => ({
+const useStyles = makeStyles((theme) => ({
 
-});
+}));
 
 function CustomAppBar(props) {
     return (
-        <AppBar position="static">
+        <AppBar color="primary" position="static">
             <ToolBar>
                 <IconButton edge="start">
                     <MenuIcon />
@@ -21,4 +23,4 @@ function CustomAppBar(props) {
     );
 }
 
-export default  withStyles(styles)(CustomAppBar);
+export default  CustomAppBar;
