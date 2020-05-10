@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
         '&:hover': {
             backgroundColor: fade(theme.palette.common.black, 0.06),
         },
-        margin: theme.spacing(0, 30),
+        margin: theme.spacing(0, 10),
         '&:click': {
             margin: theme.spacing(0, 3),
         },
