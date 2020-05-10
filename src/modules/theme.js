@@ -4,9 +4,9 @@ import { green, grey, red } from '@material-ui/core/colors';
 const rawTheme = createMuiTheme({
     palette: {
         primary: {
-            light: '#fff5f8',
-            main: '#fff5f8',
-            dark: '#fff5f8',
+            light: '#ede7f6',
+            main: '#6200ea',
+            dark: '#311b92',
         },
         secondary: {
             light: '#fff5f8',
@@ -76,8 +76,8 @@ const theme = {
         },
         h4: {
             ...rawTheme.typography.h4,
-            ...fontHeader,
-            fontSize: 36,
+            fontSize: 32,
+            fontWeight: rawTheme.typography.fontWeightLight,
         },
         h5: {
             ...rawTheme.typography.h5,
