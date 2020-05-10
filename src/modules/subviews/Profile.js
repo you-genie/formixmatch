@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     card: {
         position: 'relative',
         justifySelf: 'center',
-        width: '70%',
+        width: '55%',
         maxWidth: '80%',
         display: 'flex',
     },

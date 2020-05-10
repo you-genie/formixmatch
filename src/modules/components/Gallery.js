@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'center'
     },
     gridList: {
-        width: '70%',
+        width: '55%',
         height: '50%',
         transform: 'translateZ(0)'
     },
@@ -44,7 +44,7 @@ function GalleryPanel(props) {
                     justify='center'
                     className={classes.root}>
                     <GridList
-                        cellHeight={250}
+                        cellHeight={300}
                         spacing={3}
                         cols={3}
                         className={classes.gridList}>

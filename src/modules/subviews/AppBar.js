@@ -17,6 +17,7 @@ import Profile from '../../assets/icons/profile.jpg';
 const useStyles = makeStyles((theme) => ({
     root: {
         margin: theme.spacing(1, 5),
+        padding: theme.spacing(0, 10),
     },
     search: {
         position: 'relative',
@@ -30,6 +31,9 @@ const useStyles = makeStyles((theme) => ({
             margin: theme.spacing(0, 3),
         },
         width: '50%'
+    },
+    grow: {
+        flexGrow: 1,
     },
     icon:{
         width: theme.spacing(6),
@@ -69,9 +73,10 @@ function CustomAppBar(props) {
     return (
         <div className={classes.root}>
             <AppBar elevation="0" color="transparent" position="static">
-                <ToolBar>
+                <ToolBar >
                     <Button
                         startIcon={<img src={Logo} width="150px"/>} />
+                    <div className={classes.grow} />
                     <div className={classes.search}>
                         <div className={classes.searchIcon}>
                             <SearchIcon />
@@ -84,6 +89,7 @@ function CustomAppBar(props) {
                             }}
                             inputProps={{'area-label': 'search'}} />
                     </div>
+                    <div className={classes.grow} />
                     <IconButton className={classes.icon}>
                         <ShareIcon />
                     </IconButton>
