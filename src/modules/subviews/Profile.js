@@ -22,21 +22,20 @@ const useStyles = makeStyles((theme) => ({
     },
     card: {
         position: 'relative',
-        height: '320px',
         justifySelf: 'center',
-        width: '60%',
-        maxWidth: '70%',
+        width: '70%',
+        maxWidth: '80%',
         display: 'flex',
     },
     cover: {
     },
     name: {
-        margin: theme.spacing(8, 3, 1, 0)
+        margin: theme.spacing(8, 1, 1, 0)
     },
     profileImg: {
         width: '150px',
         height: '150px',
-        margin: theme.spacing(8, 8, 3, 8),
+        margin: theme.spacing(8, 8, 3, 12),
     },
     profileButton: {
         margin: theme.spacing(0, 0, 3, 3),
