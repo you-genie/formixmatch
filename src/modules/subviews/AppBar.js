@@ -5,12 +5,14 @@ import ToolBar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import Button from '@material-ui/core/Button';
 import InputBase from '@material-ui/core/InputBase';
+import Avatar from '@material-ui/core/Avatar';
 import SearchIcon from '@material-ui/icons/Search';
 import HomeIcon from '@material-ui/icons/Home';
 import PlaceIcon from '@material-ui/icons/Place';
 import ShareIcon from '@material-ui/icons/Share';
 import RestaurantIcon from '@material-ui/icons/Restaurant';
-import Logo from '../../assets/icons/logo.svg'
+import Logo from '../../assets/icons/logo.svg';
+import Profile from '../../assets/icons/profile.jpg';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -28,6 +30,9 @@ const useStyles = makeStyles((theme) => ({
             margin: theme.spacing(0, 3),
         },
         width: '50%'
+    },
+    icon:{
+        width: theme.spacing(6),
     },
     searchIcon: {
         padding: theme.spacing(0, 3),
@@ -53,6 +58,9 @@ const useStyles = makeStyles((theme) => ({
                 width: '20ch',
             },
         },
+    },
+    profile: {
+        marginLeft: theme.spacing(1),
     }
 }));
 
@@ -76,9 +84,16 @@ function CustomAppBar(props) {
                             }}
                             inputProps={{'area-label': 'search'}} />
                     </div>
-                    <ShareIcon />
-                    <HomeIcon />
-                    <RestaurantIcon />
+                    <IconButton className={classes.icon}>
+                        <ShareIcon />
+                    </IconButton>
+                    <IconButton className={classes.icon}>
+                        <HomeIcon />
+                    </IconButton>
+                    <IconButton className={classes.icon}>
+                        <RestaurantIcon />
+                    </IconButton>
+                    <Avatar className={classes.profile} alt="IZ ON ME" src={Profile} />
                 </ToolBar>
             </AppBar >
         </div>
