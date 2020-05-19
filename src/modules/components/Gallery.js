@@ -44,7 +44,7 @@ function GalleryPanel(props) {
                     className={classes.root}>
                     <Grid
                         xs={12}
-                        sm={10}
+                        sm={12}
                         lg={6} >
                         <GridList
                             cellHeight={250}
