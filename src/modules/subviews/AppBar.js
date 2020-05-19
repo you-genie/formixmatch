@@ -17,8 +17,16 @@ import Profile from '../../assets/icons/profile.jpg';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        margin: theme.spacing(1, 5),
-        justifyContent: 'center',
+        padding: theme.spacing(1),
+        width: '100%',
+        alignItems: 'center',
+        justify: 'center',
+    },
+    logo: {
+        [theme.breakpoints.down('sm')]: {
+            width: '200px',
+            height: '100px'
+        },
     },
     search: {
         position: 'relative',
@@ -31,10 +39,16 @@ const useStyles = makeStyles((theme) => ({
         '&:click': {
             margin: theme.spacing(0, 3),
         },
-        width: '50%'
+        width: '50%',
+        [theme.breakpoints.down('sm')]: {
+            height: '60px',
+        },
     },
     grow: {
         flexGrow: 1,
+        [theme.breakpoints.down('sm')]: {
+            display: 'none',
+        },
     },
     icon:{
         width: theme.spacing(6),
@@ -50,6 +64,9 @@ const useStyles = makeStyles((theme) => ({
     },
     inputRoot: {
         color: 'inherit',
+        [theme.breakpoints.down('sm')]: {
+            visibility: 'collapse',
+        },
     },
     inputInput: {
         padding: theme.spacing(1, 1, 1, 1),
@@ -57,7 +74,7 @@ const useStyles = makeStyles((theme) => ({
         paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
         transition: theme.transitions.create('width'),
         width: '100px',
-        [theme.breakpoints.up('sm')]: {
+        [theme.breakpoints.up('lg')]: {
             width: '12ch',
             '&:focus': {
                 width: '20ch',
@@ -66,18 +83,31 @@ const useStyles = makeStyles((theme) => ({
     },
     profile: {
         marginLeft: theme.spacing(1),
+    },
+    icons: {
+        display: 'flex',
+        [theme.breakpoints.down('sm')]: {
+            display: 'none',
+        },
     }
 }));
 
 function CustomAppBar(props) {
     const classes = useStyles();
     return (
-        <div className={classes.root}>
-            <Grid >
+        <Grid
+            container lg={12}
+            direction='row'
+            alignItems='center'
+            className={classes.root}>
+            <Grid
+                item
+                sm={12}>
                 <AppBar elevation="0" color="transparent" position="static">
                     <ToolBar >
                         <Button
-                            startIcon={<img src={Logo} width="150px"/>} />
+                            className={classes.logo}
+                            startIcon={<img src={Logo} className={classes.logo} width="150px"/>} />
                         <div className={classes.grow} />
                         <div className={classes.search}>
                             <div className={classes.searchIcon}>
@@ -92,21 +122,24 @@ function CustomAppBar(props) {
                                 inputProps={{'area-label': 'search'}} />
                         </div>
                         <div className={classes.grow} />
-                        <IconButton className={classes.icon}>
-                            <ShareIcon />
-                        </IconButton>
-                        <IconButton className={classes.icon}>
-                            <HomeIcon />
-                        </IconButton>
-                        <IconButton className={classes.icon}>
-                            <RestaurantIcon />
-                        </IconButton>
-                        <Avatar className={classes.profile} alt="IZ ON ME" src={Profile} />
+                        <div className={classes.icons} >
+                            <IconButton className={classes.icon}>
+                                <ShareIcon />
+                            </IconButton>
+                            <IconButton className={classes.icon}>
+                                <HomeIcon />
+                            </IconButton>
+                            <IconButton className={classes.icon}>
+                                <RestaurantIcon />
+                            </IconButton>
+                            <Avatar className={classes.profile} alt="IZ ON ME" src={Profile} />
+                        </div>
+
                     </ToolBar>
                 </AppBar >
             </Grid>
 
-        </div>
+        </Grid>
 
     );
 }
