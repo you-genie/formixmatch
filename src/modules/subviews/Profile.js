@@ -32,29 +32,40 @@ const useStyles = makeStyles((theme) => ({
     cover: {
     },
     name: {
-        margin: theme.spacing(8, 1, 1, 0)
+        margin: theme.spacing(8, 1, 1, 0),
+        [theme.breakpoints.down('sm')]: {
+            margin: theme.spacing(0, 1, 1, 0),
+        }
     },
     profileImg: {
         width: '150px',
         height: '150px',
         [theme.breakpoints.down('sm')]: {
-            width: '250px',
-            height: '250px',
-            margin: theme.spacing(0, 2)
+            width: '100px',
+            height: '100px',
+            margin: theme.spacing(0, 4)
         },
         margin: theme.spacing(8, 0, 0),
     },
     profileButton: {
         margin: theme.spacing(0, 0, 3, 3),
+        [theme.breakpoints.down('sm')]: {
+            margin: theme.spacing(0, 0, 0, 2),
+            paddingBottom: theme.spacing(2)
+        },
     },
     infoGrid: {
         justifyItems: 'center',
         alignItems: 'center',
-        marginBottom: theme.spacing(2)
+        marginBottom: theme.spacing(2),
+        [theme.breakpoints.down('sm')]: {
+            margin: theme.spacing(0),
+            paddingTop: theme.spacing(-1)
+        }
     },
     cardContentGrid: {
         [theme.breakpoints.down('sm')]: {
-            marginTop: theme.spacing(-5),
+            marginTop: theme.spacing(0),
         },
         marginLeft: theme.spacing(2),
     }
@@ -131,7 +142,7 @@ function Profile(props) {
                                 color='primary'
                                 onClick={preventDefault}>
                                 <Typography
-                                    varient="body2">
+                                    variant="body2">
                                     https://github.com/you-genie/gallery_react/
                                 </Typography>
                             </Link>

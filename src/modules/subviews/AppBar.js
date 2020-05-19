@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
     },
     logo: {
         width: '150px',
-        [theme.breakpoints.down('sm')]: {
+        [theme.breakpoints.down('xs')]: {
             width: '160px',
             height: '100px'
         },
@@ -41,14 +41,14 @@ const useStyles = makeStyles((theme) => ({
             margin: theme.spacing(0, 3),
         },
         width: '50%',
-        [theme.breakpoints.down('sm')]: {
+        [theme.breakpoints.down('xs')]: {
             width: '0',
             margin: '0',
         },
     },
     grow: {
         flexGrow: 1,
-        [theme.breakpoints.down('sm')]: {
+        [theme.breakpoints.down('xs')]: {
             display: 'none',
         },
     },
@@ -63,13 +63,13 @@ const useStyles = makeStyles((theme) => ({
         pointerEvents: 'none',
         alignItems: 'center',
         justifyContent: 'center',
-        [theme.breakpoints.down('sm')]: {
+        [theme.breakpoints.down('xs')]: {
             display: 'none',
         },
     },
     inputRoot: {
         color: 'inherit',
-        [theme.breakpoints.down('sm')]: {
+        [theme.breakpoints.down('xs')]: {
             visibility: 'collapse',
         },
     },
@@ -79,7 +79,7 @@ const useStyles = makeStyles((theme) => ({
         paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
         transition: theme.transitions.create('width'),
         width: '100px',
-        [theme.breakpoints.up('lg')]: {
+        [theme.breakpoints.up('md')]: {
             width: '12ch',
             '&:focus': {
                 width: '20ch',
@@ -91,7 +91,7 @@ const useStyles = makeStyles((theme) => ({
     },
     icons: {
         display: 'flex',
-        [theme.breakpoints.down('sm')]: {
+        [theme.breakpoints.down('xs')]: {
             visibility: 'hidden',
             display: 'block',
         },
@@ -103,7 +103,7 @@ const useStyles = makeStyles((theme) => ({
         height: theme.spacing(6),
         color: theme.palette.text.primary,
         backgroundColor: theme.palette.background.default,
-        [theme.breakpoints.down('sm')]: {
+        [theme.breakpoints.down('xs')]: {
             display: 'flex',
         },
     }

@@ -78,6 +78,10 @@ const theme = {
             ...rawTheme.typography.h4,
             fontSize: 32,
             fontWeight: rawTheme.typography.fontWeightLight,
+            [rawTheme.breakpoints.down('sm')]: {
+                fontSize: 26,
+                lineHeight: 2,
+            }
         },
         h5: {
             ...rawTheme.typography.h5,
@@ -101,14 +105,14 @@ const theme = {
             fontWeight: rawTheme.typography.fontWeightRegular,
             fontSize: 16,
             [rawTheme.breakpoints.down('sm')]: {
-                fontSize: 22,
+                fontSize: 20,
             }
         },
         body2: {
             ...rawTheme.typography.body1,
             fontSize: 14,
             [rawTheme.breakpoints.down('sm')]: {
-                fontSize: 20,
+                fontSize: 16,
             }
         },
     },
