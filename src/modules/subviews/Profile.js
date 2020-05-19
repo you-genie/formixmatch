@@ -18,13 +18,12 @@ const useStyles = makeStyles((theme) => ({
     root: {
         justifySelf: 'center',
         alignItems: 'center',
-        justify: 'center'
+        justify: 'center',
+        margin: theme.spacing(1),
     },
     card: {
         position: 'relative',
         justifySelf: 'center',
-        width: '55%',
-        maxWidth: '80%',
         display: 'flex',
     },
     cover: {

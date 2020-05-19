@@ -10,10 +10,9 @@ import imageLoader from "./images";
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        alignItems: 'center'
+        alignItems: 'center',
     },
     gridList: {
-        width: '55%',
         height: '50%',
         transform: 'translateZ(0)'
     },
@@ -43,23 +42,28 @@ function GalleryPanel(props) {
                     container
                     justify='center'
                     className={classes.root}>
-                    <GridList
-                        cellHeight={300}
-                        spacing={3}
-                        cols={3}
-                        className={classes.gridList}>
-                        {images.map((tile) => (
-                            <GridListTile
-                                key={tile.id}
-                                cols={tile.id%5===0 ? 2 :1}>
-                                <img src={tile.src} alt={tile.description}/>
-                                <GridListTileBar
-                                    title={tile.description}
-                                    titlePosition='top'
-                                    className={classes.titleBar}/>
-                            </GridListTile>
-                        ))}
-                    </GridList>
+                    <Grid
+                        xs={12}
+                        sm={10}
+                        lg={6} >
+                        <GridList
+                            cellHeight={300}
+                            spacing={3}
+                            cols={3}
+                            className={classes.gridList}>
+                            {images.map((tile) => (
+                                <GridListTile
+                                    key={tile.id}
+                                    cols={tile.id%5===0 ? 2 :1}>
+                                    <img src={tile.src} alt={tile.description}/>
+                                    <GridListTileBar
+                                        title={tile.description}
+                                        titlePosition='top'
+                                        className={classes.titleBar}/>
+                                </GridListTile>
+                            ))}
+                        </GridList>
+                    </Grid>
                 </Grid>
             )}
         </div>
