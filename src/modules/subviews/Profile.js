@@ -25,6 +25,9 @@ const useStyles = makeStyles((theme) => ({
         position: 'relative',
         justifySelf: 'center',
         display: 'flex',
+        [theme.breakpoints.down('sm')]: {
+            display: 'block',
+        },
     },
     cover: {
     },
@@ -34,6 +37,11 @@ const useStyles = makeStyles((theme) => ({
     profileImg: {
         width: '150px',
         height: '150px',
+        [theme.breakpoints.down('sm')]: {
+            width: '250px',
+            height: '250px',
+            margin: theme.spacing(0, 2)
+        },
         margin: theme.spacing(8, 0, 0),
     },
     profileButton: {
@@ -45,6 +53,9 @@ const useStyles = makeStyles((theme) => ({
         marginBottom: theme.spacing(2)
     },
     cardContentGrid: {
+        [theme.breakpoints.down('sm')]: {
+            marginTop: theme.spacing(-5),
+        },
         marginLeft: theme.spacing(2),
     }
 }))
