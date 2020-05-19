@@ -34,16 +34,18 @@ const useStyles = makeStyles((theme) => ({
     profileImg: {
         width: '150px',
         height: '150px',
-        margin: theme.spacing(8, 8, 3, 12),
+        margin: theme.spacing(8, 0, 0),
     },
     profileButton: {
         margin: theme.spacing(0, 0, 3, 3),
     },
     infoGrid: {
-        width: '50%',
         justifyItems: 'center',
         alignItems: 'center',
         marginBottom: theme.spacing(2)
+    },
+    cardContentGrid: {
+        marginLeft: theme.spacing(2),
     }
 }))
 
@@ -68,54 +70,61 @@ function Profile(props) {
                 </CardMedia>
                 <CardContent >
                     <Grid
-                        className={classes.name}
-                        container
-                        direction='row'
+                        className={classes.cardContentGrid}>
+                        <Grid
+                            className={classes.name}
+                            container
+                            direction='row'
                         >
-                        <Typography
-                            variant="h4" color="textSecondary">
-                            Chaewon Kim
-                        </Typography>
-                        <IconButton
-                            className={classes.profileButton}
+                            <Typography
+                                variant="h4" color="textSecondary">
+                                Chaewon Kim
+                            </Typography>
+                            <IconButton
+                                className={classes.profileButton}
                             >
-                            <SettingIcon />
-                        </IconButton>
+                                <SettingIcon />
+                            </IconButton>
+                        </Grid>
+                        <Grid
+                            container
+                            direction='row'
+                            justify='space-between'
+                            xs={10}
+                            sm={10}
+                            lg={12}
+                            className={classes.infoGrid}>
+                            <Typography variant='caption1'>
+                                게시물 3
+                            </Typography>
+                            <Typography variant='caption1'>
+                                팔로워 1
+                            </Typography>
+                            <Typography variant='caption1'>
+                                팔로우 1
+                            </Typography>
+                        </Grid>
+                        <Typography variant='subtitle1'>
+                            김채원
+                        </Typography>
+                        <Typography
+                            variant="body2">
+                            테스트 계정입니다 :) 덕질은 그저 거들뿐 ㅎ..
+                            더 뭐 쓰지
+                            모르겠당
+                        </Typography>
+                        <Typography
+                            variant='caption'>
+                            <Link
+                                href='#'
+                                color='primary'
+                                onClick={preventDefault}>
+                                https://github.com/you-genie/gallery_react/
+                            </Link>
+                        </Typography>
                     </Grid>
-                    <Grid
-                        container
-                        direction='row'
-                        justify='space-between'
-                        className={classes.infoGrid}>
-                        <Typography variant='caption1'>
-                            게시물 3
-                        </Typography>
-                        <Typography variant='caption1'>
-                            팔로워 1
-                        </Typography>
-                        <Typography variant='caption1'>
-                            팔로우 1
-                        </Typography>
-                    </Grid>
-                    <Typography variant='subtitle1'>
-                        김채원
-                    </Typography>
-                    <Typography
-                        variant="body2">
-                        테스트 계정입니다 :) 덕질은 그저 거들뿐 ㅎ..
-                        더 뭐 쓰지
-                        모르겠당
-                    </Typography>
-                    <Typography
-                        variant='caption'>
-                        <Link
-                            href='#'
-                            color='primary'
-                            onClick={preventDefault}>
-                            https://github.com/you-genie/gallery_react/
-                        </Link>
-                    </Typography>
-                </CardContent>
+
+                </CardContent >
             </Card>
         </Grid>
 
