@@ -17,7 +17,7 @@ import Profile from '../../assets/icons/profile.jpg';
 const useStyles = makeStyles((theme) => ({
     root: {
         margin: theme.spacing(1, 5),
-        padding: theme.spacing(0, 10),
+        justifyContent: 'center',
     },
     search: {
         position: 'relative',
@@ -72,36 +72,39 @@ function CustomAppBar(props) {
     const classes = useStyles();
     return (
         <div className={classes.root}>
-            <AppBar elevation="0" color="transparent" position="static">
-                <ToolBar >
-                    <Button
-                        startIcon={<img src={Logo} width="150px"/>} />
-                    <div className={classes.grow} />
-                    <div className={classes.search}>
-                        <div className={classes.searchIcon}>
-                            <SearchIcon />
+            <Grid >
+                <AppBar elevation="0" color="transparent" position="static">
+                    <ToolBar >
+                        <Button
+                            startIcon={<img src={Logo} width="150px"/>} />
+                        <div className={classes.grow} />
+                        <div className={classes.search}>
+                            <div className={classes.searchIcon}>
+                                <SearchIcon />
+                            </div>
+                            <InputBase
+                                placeholder={"검색..."}
+                                classes={{
+                                    root: classes.inputRoot,
+                                    input: classes.inputInput,
+                                }}
+                                inputProps={{'area-label': 'search'}} />
                         </div>
-                        <InputBase
-                            placeholder={"검색..."}
-                            classes={{
-                                root: classes.inputRoot,
-                                input: classes.inputInput,
-                            }}
-                            inputProps={{'area-label': 'search'}} />
-                    </div>
-                    <div className={classes.grow} />
-                    <IconButton className={classes.icon}>
-                        <ShareIcon />
-                    </IconButton>
-                    <IconButton className={classes.icon}>
-                        <HomeIcon />
-                    </IconButton>
-                    <IconButton className={classes.icon}>
-                        <RestaurantIcon />
-                    </IconButton>
-                    <Avatar className={classes.profile} alt="IZ ON ME" src={Profile} />
-                </ToolBar>
-            </AppBar >
+                        <div className={classes.grow} />
+                        <IconButton className={classes.icon}>
+                            <ShareIcon />
+                        </IconButton>
+                        <IconButton className={classes.icon}>
+                            <HomeIcon />
+                        </IconButton>
+                        <IconButton className={classes.icon}>
+                            <RestaurantIcon />
+                        </IconButton>
+                        <Avatar className={classes.profile} alt="IZ ON ME" src={Profile} />
+                    </ToolBar>
+                </AppBar >
+            </Grid>
+
         </div>
 
     );
