@@ -23,8 +23,9 @@ const useStyles = makeStyles((theme) => ({
         justify: 'center',
     },
     logo: {
+        width: '150px',
         [theme.breakpoints.down('sm')]: {
-            width: '200px',
+            width: '160px',
             height: '100px'
         },
     },
@@ -41,7 +42,8 @@ const useStyles = makeStyles((theme) => ({
         },
         width: '50%',
         [theme.breakpoints.down('sm')]: {
-            height: '60px',
+            width: '0',
+            margin: '0',
         },
     },
     grow: {
@@ -60,7 +62,10 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         pointerEvents: 'none',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        [theme.breakpoints.down('sm')]: {
+            display: 'none',
+        },
     },
     inputRoot: {
         color: 'inherit',
@@ -87,7 +92,19 @@ const useStyles = makeStyles((theme) => ({
     icons: {
         display: 'flex',
         [theme.breakpoints.down('sm')]: {
-            display: 'none',
+            visibility: 'hidden',
+            display: 'block',
+        },
+    },
+    fadedSearch: {
+        display: 'none',
+        marginTop: theme.spacing(1),
+        width: theme.spacing(6),
+        height: theme.spacing(6),
+        color: theme.palette.text.primary,
+        backgroundColor: theme.palette.background.default,
+        [theme.breakpoints.down('sm')]: {
+            display: 'flex',
         },
     }
 }));
@@ -102,12 +119,12 @@ function CustomAppBar(props) {
             className={classes.root}>
             <Grid
                 item
-                sm={12}>
+                xs={12}>
                 <AppBar elevation="0" color="transparent" position="static">
                     <ToolBar >
                         <Button
                             className={classes.logo}
-                            startIcon={<img src={Logo} className={classes.logo} width="150px"/>} />
+                            startIcon={<img src={Logo} className={classes.logo}/>} />
                         <div className={classes.grow} />
                         <div className={classes.search}>
                             <div className={classes.searchIcon}>
@@ -134,7 +151,9 @@ function CustomAppBar(props) {
                             </IconButton>
                             <Avatar className={classes.profile} alt="IZ ON ME" src={Profile} />
                         </div>
-
+                        <Avatar className={classes.fadedSearch} >
+                            <HomeIcon />
+                        </Avatar>
                     </ToolBar>
                 </AppBar >
             </Grid>
