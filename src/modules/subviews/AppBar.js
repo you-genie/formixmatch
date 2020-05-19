@@ -2,6 +2,7 @@ import React from 'react';
 import {fade, makeStyles} from '@material-ui/core/styles/';
 import AppBar from '@material-ui/core/AppBar';
 import ToolBar from '@material-ui/core/Toolbar';
+import Grid from '@material-ui/core/Grid';
 import IconButton from '@material-ui/core/IconButton';
 import Button from '@material-ui/core/Button';
 import InputBase from '@material-ui/core/InputBase';

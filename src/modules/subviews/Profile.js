@@ -119,7 +119,10 @@ function Profile(props) {
                                 href='#'
                                 color='primary'
                                 onClick={preventDefault}>
-                                https://github.com/you-genie/gallery_react/
+                                <Typography
+                                    varient="body2">
+                                    https://github.com/you-genie/gallery_react/
+                                </Typography>
                             </Link>
                         </Typography>
                     </Grid>
