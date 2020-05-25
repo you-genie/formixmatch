@@ -32,7 +32,7 @@ function loadPic(index) {
             tags: [
                 'cute',
                 'love',
-                'mmummu',
+                'cat',
             ],
             description: '아 졸려 죽겠땅 도대체 뭘 써야 하지 꺄륵'
         },
