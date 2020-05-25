@@ -4,10 +4,13 @@ import imageLoader from "../components/images";
 import userLoader from "../components/users";
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
+import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import ProfileImg from "../../assets/icons/profile.jpg";
 import Avatar from '@material-ui/core/Avatar';
+import IconButton from '@material-ui/core/IconButton';
+import MoreVertIcon from '@material-ui/icons/MoreVert';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -22,6 +25,7 @@ function loadPic(index) {
 
     const value = {
         url: pictureValue.src,
+        date: pictureValue.description,
         user: {
             name: 'Chaewon',
             id: 'itz_ssammu_time',
@@ -101,11 +105,19 @@ function Pictorant(props) {
     return (
         <div>
             <Card>
-                <CardMedia
-                    title={users["1234"].name} >
-                    <Avatar
-                        src={users["1234"].profile} />
-                </CardMedia>
+                <CardHeader
+                    avatar={
+                        <Avatar
+                            src={users["1234"].profile} />
+                    }
+                    title={users["1234"].name}
+                    subheader={pictureValue.date}
+                    action={
+                        <IconButton aria-label='settings'>
+                            <MoreVertIcon />
+                        </IconButton>
+                    }
+                />
             </Card>
         </div>
     );
