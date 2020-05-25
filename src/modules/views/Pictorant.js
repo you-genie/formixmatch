@@ -9,12 +9,16 @@ import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import ProfileImg from "../../assets/icons/profile.jpg";
 import Avatar from '@material-ui/core/Avatar';
+import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 
 const useStyles = makeStyles((theme) => ({
     root: {
 
+    },
+    image: {
+        height: '500px',
     }
 }));
 
@@ -110,7 +114,7 @@ function Pictorant(props) {
                         <Avatar
                             src={users["1234"].profile} />
                     }
-                    title={users["1234"].name}
+                    title={users["1234"].id}
                     subheader={pictureValue.date}
                     action={
                         <IconButton aria-label='settings'>
@@ -118,6 +122,20 @@ function Pictorant(props) {
                         </IconButton>
                     }
                 />
+                <CardMedia
+                    className={classes.image}
+                    image={pictureValue.url}
+                    title='lala'/>
+                <CardContent>
+                    <Typography varient='body2' color='textSecondary'>
+                        <b>{pictureValue.user.id}</b> {pictureValue.info.description}
+                    </Typography>
+                    <Typography varient='subtitle2' color='textSecondary'>
+                        {pictureValue.info.tags.map((tag) => (
+                            <b>#{tag} </b>
+                            ))}
+                    </Typography>
+                </CardContent>
             </Card>
         </div>
     );
