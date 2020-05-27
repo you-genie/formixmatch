@@ -17,7 +17,7 @@ const users = {
         name: '김민주',
         id: 'frog_lady',
         enName: 'Minju Kim',
-        profile: '/users/3333/jpg'
+        profile: '/users/3333.jpg'
     }
 }
 

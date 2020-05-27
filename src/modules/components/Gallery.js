@@ -7,6 +7,7 @@ import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
 import IconButton from '@material-ui/core/IconButton';
 import imageLoader from "./images";
+import {Link} from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -53,6 +54,7 @@ function GalleryPanel(props) {
                             className={classes.gridList}>
                             {images.map((tile) => (
                                 <GridListTile
+                                    onClick={()=> props.history.push('/pictorant/'+tile.id)}
                                     key={tile.id}
                                     cols={tile.id%5===0 ? 2 :1}>
                                     <img src={tile.src} alt={tile.description}/>

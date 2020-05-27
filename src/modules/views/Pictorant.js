@@ -12,10 +12,28 @@ import Avatar from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
+import CommentBox from "../components/CommentBox";
+import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    card: {
+        width: '50%',
+        [theme.breakpoints.down('md')]: {
+            width: '70%',
+        },
+        [theme.breakpoints.down('sm')]: {
+            width: '100%'
+        },
+    },
+    commentBox: {
+      paddingTop: theme.spacing(6),
+    },
+    infoSection: {
+        paddingTop: theme.spacing(2),
     },
     image: {
         height: '500px',
@@ -66,7 +84,14 @@ function loadPic(index) {
                         uid: '4321',
                         body: '아 배고파',
                         likes: 1,
-                        comments: []
+                        comments: [
+                            {
+                                uid: '1234',
+                                body: '마카롱먹구싶땅',
+                                likes: 1,
+                                comments: [],
+                            }
+                        ]
                     },
                     {
                         uid: '1234',
@@ -107,8 +132,12 @@ function Pictorant(props) {
     const users = userLoader();
 
     return (
-        <div>
-            <Card>
+        <Grid
+            container
+            className={classes.root}>
+            <Card
+                elevation={0}
+                className={classes.card}>
                 <CardHeader
                     avatar={
                         <Avatar
@@ -130,14 +159,31 @@ function Pictorant(props) {
                     <Typography varient='body2' color='textSecondary'>
                         <b>{pictureValue.user.id}</b> {pictureValue.info.description}
                     </Typography>
-                    <Typography varient='subtitle2' color='textSecondary'>
-                        {pictureValue.info.tags.map((tag) => (
-                            <b>#{tag} </b>
+                    <div
+                        className={classes.infoSection}>
+                        <Typography varient='subtitle2' color='textSecondary'>
+                            {pictureValue.info.tags.map((tag) => (
+                                <b>#{tag} </b>
                             ))}
-                    </Typography>
+                        </Typography>
+                        <Typography variant='subtitle2'>
+                            {pictureValue.info.likes}<b> likes this post.</b>
+                        </Typography>
+                    </div>
+
+                    <div
+                        className={classes.commentBox}>
+                        {pictureValue.comments.map((comment) => {
+                            return (
+                                <CommentBox
+                                    comment={comment} />
+                            )
+                        })}
+                    </div>
+
                 </CardContent>
             </Card>
-        </div>
+        </Grid>
     );
 }
 
