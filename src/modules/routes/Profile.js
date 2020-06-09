@@ -1,6 +1,6 @@
 import React from 'react';
 import {withStyles} from '@material-ui/core/styles';
-import ProfileView from "../views/ProfileView";
+import ProfileCard from "../views/ProfileCard";
 import GalleryTab from "../views/GalleryTab";
 
 const styles = (theme) => {
@@ -11,7 +11,7 @@ function Profile(props) {
 	const { classes } = props;
     return (
         <div className={classes.root}>
-            <ProfileView />
+            <ProfileCard />
             <GalleryTab />
         </div>
     );

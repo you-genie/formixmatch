@@ -71,7 +71,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }))
 
-function ProfileView(props) {
+function ProfileCard(props) {
     const classes = useStyles();
     const preventDefault = (event) => event.preventDefault();
 
@@ -156,4 +156,4 @@ function ProfileView(props) {
     );
 }
 
-export default ProfileView;
+export default ProfileCard;
