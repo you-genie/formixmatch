@@ -117,7 +117,7 @@ function ProfileCard(props) {
                             {description}
                         </Typography>
                         {sites.map((site)=> (
-                            <Link href={site} onClick={preventDefault}>
+                            <Link color='primaryDark' href={site} onClick={preventDefault}>
                                 <Typography
                                     variant='caption'>
                                     {site}
