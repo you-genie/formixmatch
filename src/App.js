@@ -2,9 +2,9 @@ import withRoot from './modules/withRoot'
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import AppBar from "./modules/views/ProfileAppBar";
+import AppBar from "./modules/components/ProfileAppBar";
 import AppFooter from "./modules/views/AppFooter";
-import Home from "./modules/routes/Profile";
+import Home from "./modules/routes/MyFeed";
 import Pictorant from "./modules/routes/Pictorant";
 
 import logo from './logo.svg';

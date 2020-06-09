@@ -1,13 +1,13 @@
 import React from 'react';
 import {withStyles} from '@material-ui/core/styles';
-import ProfileCard from "../views/ProfileCard";
+import ProfileCard from "../components/ProfileCard";
 import GalleryTab from "../views/GalleryTab";
 
 const styles = (theme) => {
 
 }
 
-function Profile(props) {
+function MyFeed(props) {
 	const { classes } = props;
     return (
         <div className={classes.root}>
@@ -17,4 +17,4 @@ function Profile(props) {
     );
 }
 
-export default withStyles(styles)(Profile);
+export default withStyles(styles)(MyFeed);
