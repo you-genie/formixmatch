@@ -15,7 +15,7 @@ function Index() {
       <Router>
           <div>
               <AppBar />
-              <div>
+              <div style={{height: '40%'}}>
                   <Switch>
                       <Route exact path="/" component={Home} />
                       <Route path="/pictorant" component={Pictorant} />

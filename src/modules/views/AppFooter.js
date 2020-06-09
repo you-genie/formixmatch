@@ -11,7 +11,10 @@ import FavoriteBorderOutlinedIcon from '@material-ui/icons/FavoriteBorderOutline
 import ProfileImg from '../../assets/icons/profile.jpg';
 
 const styles = (theme) => ({
-
+    root: {
+        top: 'auto',
+        bottom: 0,
+    }
 });
 
 function AppFooter(props) {
@@ -26,8 +29,11 @@ function AppFooter(props) {
     )
     return (<div>
         <AppBar
+            className={classes.root}
             elevation='0'
-            position='sticky' color='transparent'>
+            color='#ffffff'
+            position='fixed' >
+
             <Tabs
                 value={value}
                 onChange={handleChange}
