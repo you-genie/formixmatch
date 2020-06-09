@@ -44,6 +44,7 @@ function GalleryTab(props) {
                     onChange={handleChange}
                     indicatorColor='primary'
                     textColor='primary'
+                    variant='fullWidth'
                     centered>
                     <Tab icon={<GridOnIcon />}{...a11yProps(0)} />
                     <Tab icon={<AssignmentIndOutlinedIcon />}{...a11yProps(1)} />
@@ -54,9 +55,6 @@ function GalleryTab(props) {
             </GalleryPanel>
             <GalleryPanel value={value} index={1} dir={theme.direction}>
                 Item Two
-            </GalleryPanel>
-            <GalleryPanel value={value} index={2} dir={theme.direction}>
-                Item Three
             </GalleryPanel>
         </div>
     )

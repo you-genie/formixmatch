@@ -58,13 +58,15 @@ function GalleryPanel(props) {
                         container
                         justify='center'>
                         <GridList
-                            spacing={3}
+                            spacing={1}
+                            cellHeight={120}
                             cols={3}
                             className={classes.gridList}>
                             {images.map((tile) => (
                                 <GridListTile
                                     onClick={()=> props.history.push('/pictorant/'+tile.id)}
                                     key={tile.id}
+                                    rows={1}
                                     cols={1}>
                                     <img src={tile.src} alt={tile.description}/>
                                     <GridListTileBar
