@@ -11,6 +11,7 @@ import Button from '@material-ui/core/Button';
 import Link from '@material-ui/core/Link';
 import IconButton from '@material-ui/core/IconButton';
 import SettingIcon from '@material-ui/icons/Settings';
+import AddCircleIcon from '@material-ui/icons/AddCircle';
 import ProfileImg from '../../assets/icons/profile.jpg';
 import theme from "../theme";
 import TextButton from "./TextButton";
@@ -41,6 +42,11 @@ const useStyles = makeStyles((theme) => ({
         height: '80px',
         marginLeft: theme.spacing(1),
     },
+    profileIcon: {
+        width: '10px',
+        height: '10px',
+        margin: theme.spacing(-5, 7),
+    },
     infoGrid: {
         flex: 1,
         margin: theme.spacing(0, 2, 2, 2),
@@ -65,6 +71,13 @@ function ProfileCard(props) {
                     <Avatar
                         className={classes.profileImg}
                             src={profile} />
+                    <div
+                        className={classes.profileIcon}>
+                        <IconButton disabled>
+                            <AddCircleIcon color='primary'/>
+                        </IconButton>
+                    </div>
+
                 </CardMedia>
                 <CardContent style={{width: '70%'}}>
                     <Grid
