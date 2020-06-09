@@ -1,5 +1,6 @@
 import withRoot from './modules/withRoot'
 import React, { Component } from 'react';
+
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import AppBar from "./modules/components/appBar/ProfileAppBar";
@@ -15,7 +16,7 @@ function Index() {
       <Router>
           <div>
               <AppBar />
-              <div style={{height: '40%'}}>
+              <div style={{marginTop: '45px'}}>
                   <Switch>
                       <Route exact path="/" component={Home} />
                       <Route path="/pictorant" component={Pictorant} />

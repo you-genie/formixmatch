@@ -17,6 +17,9 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'center',
         justify: 'center',
     },
+    toolbar: {
+
+    },
     id: {
         paddingBottom: theme.spacing(0.5),
     },
@@ -37,8 +40,8 @@ function TripletAppBar(props) {
             <Grid
                 item
                 xs={12}>
-                <AppBar elevation="0" color="transparent" position="sticky">
-                    <ToolBar >
+                <AppBar elevation="0" color="white" position="fixed">
+                    <ToolBar className={classes.toolbar}>
                         <Grid
                             container
                             direction='row'
