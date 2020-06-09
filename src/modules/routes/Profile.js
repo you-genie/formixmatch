@@ -1,20 +1,20 @@
 import React from 'react';
 import {withStyles} from '@material-ui/core/styles';
-import Profile from "../subviews/Profile";
-import GalleryTab from "../subviews/GalleryTab";
+import ProfileView from "../views/ProfileView";
+import GalleryTab from "../views/GalleryTab";
 
 const styles = (theme) => {
 
 }
 
-function Home(props) {
+function Profile(props) {
 	const { classes } = props;
     return (
         <div className={classes.root}>
-            <Profile />
+            <ProfileView />
             <GalleryTab />
         </div>
     );
 }
 
-export default withStyles(styles)(Home);
+export default withStyles(styles)(Profile);

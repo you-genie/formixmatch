@@ -5,13 +5,21 @@ const rawTheme = createMuiTheme({
     palette: {
         primary: {
             light: '#ede7f6',
-            main: '#6200ea',
-            dark: '#311b92',
+            main: '#2196f3',
+            dark: '#0069c0',
         },
         secondary: {
             light: '#fff5f8',
-            main: '#ff3366',
-            dark: '#e62958',
+            main: '#e53935',
+            dark: '#ab000d',
+        },
+        like: {
+            main: '#e53935'
+        },
+        grad: {
+            purple: '#8e24aa',
+            red: '#d81b60',
+            yellow: '#ff9800'
         },
         warning: {
             main: '#ffc071',
@@ -76,12 +84,9 @@ const theme = {
         },
         h4: {
             ...rawTheme.typography.h4,
-            fontSize: 32,
-            fontWeight: rawTheme.typography.fontWeightLight,
-            [rawTheme.breakpoints.down('sm')]: {
-                fontSize: 26,
-                lineHeight: 2,
-            }
+            fontSize: 26,
+            lineHeight: 2,
+            fontWeight: rawTheme.typography.fontWeightLight
         },
         h5: {
             ...rawTheme.typography.h5,
@@ -95,25 +100,16 @@ const theme = {
         },
         subtitle1: {
             ...rawTheme.typography.subtitle1,
-            fontSize: 18,
-            [rawTheme.breakpoints.down('sm')]: {
-                fontSize: 24,
-            }
+            fontSize: 24
         },
         body1: {
             ...rawTheme.typography.body2,
             fontWeight: rawTheme.typography.fontWeightRegular,
-            fontSize: 16,
-            [rawTheme.breakpoints.down('sm')]: {
-                fontSize: 20,
-            }
+            fontSize: 20
         },
         body2: {
             ...rawTheme.typography.body1,
-            fontSize: 14,
-            [rawTheme.breakpoints.down('sm')]: {
-                fontSize: 16,
-            }
+            fontSize: 16,
         },
     },
 };
