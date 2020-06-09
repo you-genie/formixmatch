@@ -17,14 +17,18 @@ import TextButton from "./TextButton";
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        justifySelf: 'center',
-        alignItems: 'center',
-        justify: 'center',
+        width: '90%',
         margin: theme.spacing(1),
     },
     upCard: {
-        height: theme.spacing(10),
         display: 'flex',
+    },
+    downCard: {
+        width: '100%'
+    },
+    downCardContent: {
+        paddingLeft: theme.spacing(1),
+        paddingTop: theme.spacing(0)
     },
     name: {
         margin: theme.spacing(8, 1, 1, 0),
@@ -35,19 +39,12 @@ const useStyles = makeStyles((theme) => ({
     profileImg: {
         width: '80px',
         height: '80px',
+        marginLeft: theme.spacing(1),
     },
     infoGrid: {
-        justifyItems: 'center',
-        alignItems: 'center',
         flex: 1,
-        marginBottom: theme.spacing(2)
+        margin: theme.spacing(0, 2, 2, 2),
     },
-    cardContentGrid: {
-        [theme.breakpoints.down('sm')]: {
-            marginTop: theme.spacing(0),
-        },
-        marginLeft: theme.spacing(2),
-    }
 }))
 
 function ProfileCard(props) {
@@ -69,11 +66,11 @@ function ProfileCard(props) {
                         className={classes.profileImg}
                             src={profile} />
                 </CardMedia>
-                <CardContent >
+                <CardContent style={{width: '70%'}}>
                     <Grid
                         container
                         direction='row'
-                        justify='space-between'
+                        justify='space-around'
                         className={classes.infoGrid}>
                         <TextButton
                             id='feeds'
@@ -90,8 +87,34 @@ function ProfileCard(props) {
                     </Grid>
                 </CardContent >
             </Card>
-            <Card>
-                sdf
+            <Card
+                className={classes.downCard}
+                elevation='0'>
+                <CardContent
+                    className={classes.downCardContent}>
+                    <Grid
+                        direction='column'
+                        container>
+                        <Typography
+                            variant='boldbody'>
+                            {name}
+                        </Typography>
+                        <Typography
+                            variant='body2'>
+                            {description}
+                        </Typography>
+                        {sites.map((site)=> (
+                            <Link href={site} onClick={preventDefault}>
+                                <Typography
+                                    variant='caption'>
+                                    {site}
+                                </Typography>
+                            </Link>
+                        ))}
+                    </Grid>
+
+
+                </CardContent>
             </Card>
         </Grid>
 

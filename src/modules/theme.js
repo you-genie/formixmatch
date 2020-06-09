@@ -102,6 +102,10 @@ const theme = {
             ...rawTheme.typography.subtitle1,
             fontSize: 24
         },
+        boldbody: {
+            fontWeight: 500,
+            fontSize: 18
+        },
         body1: {
             ...rawTheme.typography.body2,
             fontWeight: rawTheme.typography.fontWeightRegular,
@@ -109,7 +113,7 @@ const theme = {
         },
         body2: {
             ...rawTheme.typography.body1,
-            fontSize: 16,
+            fontSize: 14,
         },
     },
 };
