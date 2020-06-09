@@ -18,8 +18,8 @@ import TextButton from "./TextButton";
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        width: '90%',
-        margin: theme.spacing(1),
+        width: '100%',
+        padding: theme.spacing(1),
     },
     upCard: {
         display: 'flex',
@@ -28,14 +28,10 @@ const useStyles = makeStyles((theme) => ({
         width: '100%'
     },
     downCardContent: {
-        paddingLeft: theme.spacing(1),
         paddingTop: theme.spacing(0)
     },
     name: {
         margin: theme.spacing(8, 1, 1, 0),
-        [theme.breakpoints.down('sm')]: {
-            margin: theme.spacing(0, 1, 1, 0),
-        }
     },
     profileImg: {
         width: '80px',
@@ -51,6 +47,10 @@ const useStyles = makeStyles((theme) => ({
         flex: 1,
         margin: theme.spacing(0, 2, 2, 2),
     },
+    modifyButton: {
+        marginTop: theme.spacing(2),
+        width: '100%'
+    }
 }))
 
 function ProfileCard(props) {
@@ -125,7 +125,11 @@ function ProfileCard(props) {
                             </Link>
                         ))}
                     </Grid>
-
+                    <Button
+                        variant='outlined'
+                        className={classes.modifyButton}>
+                        프로필 수정
+                    </Button>
 
                 </CardContent>
             </Card>
@@ -146,7 +150,7 @@ ProfileCard.defaultProps = {
     name: '김채원',
     description: '테스트 계정입니다 :) 덕질은 그저 거들뿐 ㅎ.... 더 뭐 쓰지 모르겠당',
     sites: [
-        'https://github.com/you-genie/gallery_react/'
+        'https://github.com/you-genie/instagram_react/'
     ],
 }
 export default ProfileCard;
