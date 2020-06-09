@@ -7,7 +7,8 @@ import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
 import IconButton from '@material-ui/core/IconButton';
 import imageLoader from "./images";
-import {Link} from 'react-router-dom';
+import PlayArrowIcon from '@material-ui/icons/PlayArrow';
+import CollectionsIcon from '@material-ui/icons/Collections';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -18,9 +19,7 @@ const useStyles = makeStyles((theme) => ({
         transform: 'translateZ(0)'
     },
     titleBar: {
-        background:
-            'linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, ' +
-            'rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
+        background: 'transparent',
     },
     icon: {
         color:'white'
@@ -30,6 +29,18 @@ function GalleryPanel(props) {
     const { children, value, index, ...other } = props;
     const classes = useStyles();
     const images = imageLoader();
+
+    const videoButton = (
+        <IconButton className={classes.icon}>
+            <PlayArrowIcon />
+        </IconButton>
+    )
+    const multipleButton = (
+        <IconButton className={classes.icon}>
+            <CollectionsIcon />
+        </IconButton>
+    )
+
     return (
         <div
             role="tabpanel"
@@ -44,11 +55,9 @@ function GalleryPanel(props) {
                     justify='center'
                     className={classes.root}>
                     <Grid
-                        xs={12}
-                        sm={12}
-                        lg={6} >
+                        container
+                        justify='center'>
                         <GridList
-                            cellHeight={250}
                             spacing={3}
                             cols={3}
                             className={classes.gridList}>
@@ -56,12 +65,12 @@ function GalleryPanel(props) {
                                 <GridListTile
                                     onClick={()=> props.history.push('/pictorant/'+tile.id)}
                                     key={tile.id}
-                                    cols={tile.id%5===0 ? 2 :1}>
+                                    cols={1}>
                                     <img src={tile.src} alt={tile.description}/>
                                     <GridListTileBar
-                                        title={tile.description}
+                                        className={classes.titleBar}
                                         titlePosition='top'
-                                        className={classes.titleBar}/>
+                                        actionIcon={tile.type === 'video' ? videoButton : tile.type === 'multiple' ? multipleButton : undefined}/>
                                 </GridListTile>
                             ))}
                         </GridList>

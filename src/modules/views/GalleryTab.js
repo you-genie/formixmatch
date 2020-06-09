@@ -4,6 +4,8 @@ import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary';
+import AssignmentIndOutlinedIcon from '@material-ui/icons/AssignmentIndOutlined';
+import GridOnIcon from '@material-ui/icons/GridOn';
 
 import GalleryPanel from "../components/Gallery";
 
@@ -43,9 +45,8 @@ function GalleryTab(props) {
                     indicatorColor='primary'
                     textColor='primary'
                     centered>
-                    <Tab icon={<PhotoLibraryIcon />}{...a11yProps(0)} />
-                    <Tab label='IPGV' {...a11yProps(1)} />
-                    <Tab label='몰라' {...a11yProps(2)} />
+                    <Tab icon={<GridOnIcon />}{...a11yProps(0)} />
+                    <Tab icon={<AssignmentIndOutlinedIcon />}{...a11yProps(1)} />
                 </Tabs>
             </AppBar>
             <GalleryPanel value={value} index={0} dir={theme.direction}>
