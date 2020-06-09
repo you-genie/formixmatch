@@ -37,7 +37,7 @@ function TripletAppBar(props) {
             <Grid
                 item
                 xs={12}>
-                <AppBar elevation="0" color="transparent" position="static">
+                <AppBar elevation="0" color="transparent" position="sticky">
                     <ToolBar >
                         <Grid
                             container
