@@ -9,10 +9,11 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import LockIcon from '@material-ui/icons/Lock';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import TripletAppBar from "./TripletAppBar";
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        padding: theme.spacing(1),
+        padding: theme.spacing(1, 0),
         width: '100%',
         alignItems: 'center',
         justify: 'center',
@@ -25,56 +26,48 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-function CustomAppBar(props) {
-    const {user} = props
+function NameItem(props) {
+    const {id, uid} = props;
     const classes = useStyles();
     return (
-        <Grid
-            container lg={12}
-            direction='row'
-            alignItems='center'
-            className={classes.root}>
-            <Grid
-                item
-                xs={12}>
-                <AppBar elevation="0" color="transparent" position="static">
-                    <ToolBar >
-                        <Grid
-                            container
-                            direction='row'
-                            justify='space-between'>
-                            <div className={classes.spacing}>
-                                <IconButton>
-                                    <MenuIcon />
-                                </IconButton>
-                            </div>
-                            <ButtonBase
-                                focusRipple
-                                key={user.id}>
-                                <LockIcon style={{fontSize: 14}}/>
-                                <Typography variant='subtitle2' className={classes.id}>
-                                    {user.id}
-                                </Typography>
-                                <ExpandMoreIcon style={{fontSize: 16}}/>
-                            </ButtonBase>
+        <ButtonBase
+            focusRipple
+            key={uid}>
+            <LockIcon style={{fontSize: 14}}/>
+            <Typography variant='subtitle2' className={classes.id}>
+                {id}
+            </Typography>
+            <ExpandMoreIcon style={{fontSize: 16}}/>
+        </ButtonBase>
+    )
+}
 
-                            <IconButton>
-                                <MenuIcon />
-                            </IconButton>
-                        </Grid>
-
-                    </ToolBar>
-                </AppBar >
-            </Grid>
-
-        </Grid>
-
+function ProfileAppBar(props) {
+    const {user} = props
+    const classes = useStyles();
+    const nameItem = NameItem({id:user.id, uid:user.uid});
+    const spacingItem = (
+        <div className={classes.spacing}>
+        <IconButton>
+            <MenuIcon />
+        </IconButton>
+    </div>);
+    const menuItem = (
+        <IconButton>
+            <MenuIcon />
+        </IconButton>
+    )
+    return (
+        <TripletAppBar
+            item1={spacingItem}
+            item2={nameItem}
+            item3={menuItem} />
     );
 }
-CustomAppBar.defaultProps = {
+ProfileAppBar.defaultProps = {
     user: {
         id: 'itz_sammu_time',
         uid: 0
     }
 }
-export default  CustomAppBar;
+export default  ProfileAppBar;
