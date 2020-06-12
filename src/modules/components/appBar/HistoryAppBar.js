@@ -1,8 +1,9 @@
 import React from 'react';
-import {fade, makeStyles} from '@material-ui/core/styles/';
+import {fade, makeStyles, useTheme} from '@material-ui/core/styles/';
 import AppBar from '@material-ui/core/AppBar';
 import ToolBar from '@material-ui/core/Toolbar';
 import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -10,9 +11,6 @@ const useStyles = makeStyles((theme) => ({
         width: '100%',
         alignItems: 'center',
         justify: 'center',
-    },
-    toolbar: {
-
     },
     id: {
         paddingBottom: theme.spacing(0.5),
@@ -22,9 +20,9 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-function TripletAppBar(props) {
-    const {item1, item2, item3} = props;
+function HistoryAppBar(props) {
     const classes = useStyles();
+    const theme = useTheme();
     return (
         <Grid
             container lg={12}
@@ -34,15 +32,15 @@ function TripletAppBar(props) {
             <Grid
                 item
                 xs={12}>
-                <AppBar elevation="0" color="white" position="fixed">
-                    <ToolBar className={classes.toolbar}>
+                <AppBar color='secondary' elevation="1" position="fixed">
+                    <ToolBar variant='dense'>
                         <Grid
                             container
                             direction='row'
-                            justify='space-between'>
-                            {item1}
-                            {item2}
-                            {item3}
+                            justify='center'>
+                            <Typography variant='body2'>
+                                활동
+                            </Typography>
                         </Grid>
 
                     </ToolBar>
@@ -54,4 +52,4 @@ function TripletAppBar(props) {
     );
 }
 
-export default  TripletAppBar;
+export default HistoryAppBar;

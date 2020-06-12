@@ -45,7 +45,7 @@ function AppFooter(props) {
                 <Tab key='home' id={0} icon={<Link to='/'><HomeOutlinedIcon /></Link>} />
                 <Tab key='search' id={1} icon={<SearchOutlinedIcon />} />
                 <Tab key='add' id={2} icon={<AddBoxOutlinedIcon />} />
-                <Tab key='favorite' id={3} icon={<FavoriteBorderOutlinedIcon />} />
+                <Tab key='history' id={3} icon={<Link to='/history'><FavoriteBorderOutlinedIcon /></Link>} />
                 <Tab key='myFeed' id={4} icon={<Link to='/myfeed'>{profileIcon}</Link>} />
             </Tabs>
         </AppBar>
