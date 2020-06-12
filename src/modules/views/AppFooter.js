@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {withStyles} from '@material-ui/core/styles/';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
@@ -41,11 +42,11 @@ function AppFooter(props) {
                 textColor='primary'
                 variant='fullWidth'
                 centered>
-                <Tab key='home' id={0} icon={<HomeOutlinedIcon />} />
+                <Tab key='home' id={0} icon={<Link to='/'><HomeOutlinedIcon /></Link>} />
                 <Tab key='search' id={1} icon={<SearchOutlinedIcon />} />
                 <Tab key='add' id={2} icon={<AddBoxOutlinedIcon />} />
                 <Tab key='favorite' id={3} icon={<FavoriteBorderOutlinedIcon />} />
-                <Tab key='myFeed' id={4} icon={profileIcon} />
+                <Tab key='myFeed' id={4} icon={<Link to='/myfeed'>{profileIcon}</Link>} />
             </Tabs>
         </AppBar>
     </div>);

@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import ProfileAppBar from "./modules/components/appBar/ProfileAppBar";
 import AppFooter from "./modules/views/AppFooter";
-import Home from "./modules/routes/MyFeed";
+import MyFeed from "./modules/routes/MyFeed";
 import Pictorant from "./modules/routes/Pictorant";
 
 import logo from './logo.svg';
@@ -17,12 +17,13 @@ function Index() {
           <div>
               <div style={{height: '50px'}}>
                   <Switch>
-                      <Route exact path="/" component={ProfileAppBar} />
+                      <Route exact path="/myfeed" component={ProfileAppBar} />
                   </Switch>
               </div>
               <div>
                   <Switch>
-                      <Route exact path="/" component={Home} />
+                      <Route exact path="/" component={MyFeed} />
+                      <Route exact path="/myfeed" component={MyFeed} />
                       <Route path="/pictorant" component={Pictorant} />
                   </Switch>
               </div>
