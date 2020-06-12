@@ -51,6 +51,5 @@ function HistoryBox(props) {
 HistoryBox.defaultProps = {
     lead_profile: '/images/2.jpg',
     content: (<div><b>Mingu_frog</b>님과 <b>silver_rain</b>님이 Instagram에서 <b>SeungSeung</b>님을 팔로우했습니다. 게시물을 확인해 보세요.  <Typography variant='caption'>1일</Typography></div>),
-    action: (<Button variant="contained" disableElevation color='primary'>팔로우</Button>)
 }
 export default HistoryBox;
