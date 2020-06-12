@@ -11,6 +11,7 @@ import Pictorant from "./modules/routes/Pictorant";
 import logo from './logo.svg';
 import './App.css';
 import HistoryAppBar from "./modules/components/appBar/HistoryAppBar";
+import History from "./modules/routes/History";
 
 function Index() {
   return (
@@ -26,6 +27,7 @@ function Index() {
                   <Switch>
                       <Route exact path="/" component={MyFeed} />
                       <Route path="/myfeed" component={MyFeed} />
+                      <Route path="/history" component={History} />
                       <Route path="/pictorant" component={Pictorant} />
                   </Switch>
               </div>
