@@ -155,4 +155,16 @@ function threeLoader() {
     return three_images;
 }
 
-export {preLoader, oneLoader, twoLoader, threeLoader};
+function randomLoader() {
+    let idx = Math.floor(Math.random()*(3));
+    switch (idx) {
+        case 0:
+            return one_images;
+        case 1:
+            return two_images;
+        case 2:
+            return three_images;
+    }
+}
+
+export {preLoader, oneLoader, twoLoader, threeLoader, randomLoader};
