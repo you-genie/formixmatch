@@ -5,17 +5,18 @@ import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Avatar from '@material-ui/core/Avatar';
-import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
-import SearchOutlinedIcon from '@material-ui/icons/SearchOutlined';
-import AddBoxOutlinedIcon from '@material-ui/icons/AddBoxOutlined';
-import FavoriteBorderOutlinedIcon from '@material-ui/icons/FavoriteBorderOutlined';
-import ProfileImg from '../../assets/icons/profile.jpg';
+import Button from '@material-ui/core/Button';
+import ProfileImg from '../../assets/icons/profile.jpg'
 
 const styles = (theme) => ({
     root: {
         top: 'auto',
         bottom: 0,
-    }
+    },
+    button: {
+        width: '100%',
+        textDecoration: 'none'
+    },
 });
 
 function AppFooter(props) {
@@ -42,11 +43,9 @@ function AppFooter(props) {
                 textColor='primary'
                 variant='fullWidth'
                 centered>
-                <Tab key='home' id={0} icon={<Link to='/'><HomeOutlinedIcon /></Link>} />
-                <Tab key='search' id={1} icon={<SearchOutlinedIcon />} />
-                <Tab key='add' id={2} icon={<AddBoxOutlinedIcon />} />
-                <Tab key='history' id={3} icon={<Link to='/history'><FavoriteBorderOutlinedIcon /></Link>} />
-                <Tab key='myFeed' id={4} icon={<Link to='/myfeed'>{profileIcon}</Link>} />
+                <Tab key='baseline' id={0} label={<Link className={classes.button} to='/baseline'><Button large className={classes.button}>Type 1</Button></Link>} />
+                <Tab key='sel_view' id={1} label={<Link className={classes.button} to='/sel_view'><Button large className={classes.button}>Type 2</Button></Link>} />
+                <Tab key='formixmatch' id={2} label={<Link className={classes.button} to='/formixmatch'><Button large className={classes.button}>Type 3</Button></Link>} />
             </Tabs>
         </AppBar>
     </div>);

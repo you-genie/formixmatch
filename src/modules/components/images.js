@@ -1,16 +1,26 @@
 import React from 'react';
 
 const images = [
-    {id: 0, src: '/images/1.jpg', description: '2020-03-02', type: 'video'},
-    {id: 1, src: '/images/2.jpg', description: '2020-03-12', type: 'plain'},
-    {id: 2, src: '/images/3.jpg', description: '2020-04-02', type: 'video'},
-    {id: 3, src: '/images/4.jpg', description: '2020-04-03', type: 'plain'},
-    {id: 4, src: '/images/5.jpg', description: '2020-04-21', type: 'multiple'},
-    {id: 5, src: '/images/6.jpg', description: '2020-04-22', type: 'plain'},
-    {id: 6, src: '/images/7.jpg', description: '2020-05-02', type: 'video'},
-    {id: 7, src: '/images/8.jpg', description: '2020-05-12', type: 'multiple'},
-    {id: 8, src: '/images/9.jpg', description: '2020-05-12', type: 'video'},
-    {id: 9, src: '/images/10.jpg', description: '2020-05-13', type: 'plain'},
+    {id: 100, src: '/images/1.jpg', selected: false, type: 'top'},
+    {id: 101, src: '/images/2.jpg', selected: false, type: 'top'},
+    {id: 102, src: '/images/3.jpg', selected: false, type: 'top'},
+    {id: 103, src: '/images/4.jpg', selected: false, type: 'top'},
+    {id: 104, src: '/images/5.jpg', selected: false, type: 'top'},
+    {id: 105, src: '/images/6.jpg', selected: false, type: 'top'},
+    {id: 106, src: '/images/7.jpg', selected: false, type: 'top'},
+    {id: 107, src: '/images/8.jpg', selected: false, type: 'top'},
+    {id: 108, src: '/images/9.jpg', selected: false, type: 'top'},
+    {id: 109, src: '/images/10.jpg', selected: false, type: 'top'},
+    {id: 110, src: '/images/bottom1.jpg', selected: false, type: 'bottom'},
+    {id: 111, src: '/images/bottom2.jpg', selected: false, type: 'bottom'},
+    {id: 112, src: '/images/bottom3.jpg', selected: false, type: 'bottom'},
+    {id: 113, src: '/images/bottom4.jpg', selected: false, type: 'bottom'},
+    {id: 114, src: '/images/bottom5.jpg', selected: false, type: 'bottom'},
+    {id: 115, src: '/images/bottom6.jpg', selected: false, type: 'bottom'},
+    {id: 116, src: '/images/bottom7.jpg', selected: false, type: 'bottom'},
+    {id: 117, src: '/images/bottom8.jpg', selected: false, type: 'bottom'},
+    {id: 118, src: '/images/bottom9.jpg', selected: false, type: 'bottom'},
+    {id: 119, src: '/images/bottom10.jpg', selected: false, type: 'bottom'},
 ]
 
 function imageLoader() {

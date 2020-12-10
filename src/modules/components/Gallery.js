@@ -6,13 +6,20 @@ import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
 import IconButton from '@material-ui/core/IconButton';
-import imageLoader from "./images";
-import PlayArrowIcon from '@material-ui/icons/PlayArrow';
-import CollectionsIcon from '@material-ui/icons/Collections';
+import RadioButtonUncheckedIcon from '@material-ui/icons/RadioButtonUnchecked';
+import RadioButtonCheckedIcon from '@material-ui/icons/RadioButtonChecked';
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
         alignItems: 'center',
+        padding: theme.spacing(6),
+    },
+    gridRoot: {
+        width: '100%',
+    },
+    gridCondensed: {
+        width: '60%',
     },
     gridList: {
         height: '50%',
@@ -21,65 +28,83 @@ const useStyles = makeStyles((theme) => ({
     titleBar: {
         background: 'transparent',
     },
+    image: {
+        height: '80%',
+        width: '80%',
+    },
+    image_checked: {
+        height: '80%',
+        opacity: 0.4,
+        width: '80%',
+
+    },
     icon: {
-        color:'white'
+        color:'black'
     }
 }))
 function GalleryPanel(props) {
-    const { children, value, index, ...other } = props;
+    const { children, reset, sole, images, selectedImages, ...other } = props;
     const classes = useStyles();
-    const images = imageLoader();
 
-    const videoButton = (
-        <IconButton className={classes.icon}>
-            <PlayArrowIcon />
+    const toggleImage = (id) => {
+        let data = [...images];
+        let idx = data.findIndex((n) => n.id == id);
+        data[idx].selected = !data[idx].selected;
+
+        selectedImages(data);
+    }
+
+
+    const unchecked = (
+        <IconButton
+            className={classes.icon}>
+            <RadioButtonUncheckedIcon />
         </IconButton>
-    )
-    const multipleButton = (
-        <IconButton className={classes.icon}>
-            <CollectionsIcon />
+    );
+
+    const checked = (
+        <IconButton
+            className={classes.icon}>
+            <RadioButtonCheckedIcon />
         </IconButton>
-    )
+    );
 
     return (
-        <div
-            role="tabpanel"
-            hidden={value !== index}
-            id={`full-width-tabpanel-${index}`}
-            aria-labelledby={`full-width-tab-${index}`}
-            {...other}
-        >
-            {value === index && (
+
                 <Grid
                     container
                     justify='center'
                     className={classes.root}>
                     <Grid
                         container
+                        className={classes.gridRoot}
                         justify='center'>
                         <GridList
-                            spacing={1}
-                            cellHeight={120}
-                            cols={3}
-                            className={classes.gridList}>
+                            spacing={50}
+                            cellHeight={'auto'}
+                            cols={sole?6:4}
+                            className={sole?classes.gridCondensed:classes.gridList}>
                             {images.map((tile) => (
                                 <GridListTile
-                                    onClick={()=> props.history.push('/pictorant/'+tile.id)}
                                     key={tile.id}
                                     rows={1}
+                                    onClick={() => toggleImage(tile.id)}
                                     cols={1}>
-                                    <img src={tile.src} alt={tile.description}/>
+                                    <img src={tile.src} className={tile.selected?classes.image_checked:classes.image}/>
                                     <GridListTileBar
                                         className={classes.titleBar}
                                         titlePosition='top'
-                                        actionIcon={tile.type === 'video' ? videoButton : tile.type === 'multiple' ? multipleButton : undefined}/>
+                                        actionIcon={
+                                            tile.selected?checked:unchecked
+                                        }
+                                        actionPosition='right'/>
                                 </GridListTile>
+
                             ))}
                         </GridList>
                     </Grid>
                 </Grid>
-            )}
-        </div>
+
     );
 }
 

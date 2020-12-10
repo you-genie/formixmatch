@@ -5,13 +5,13 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import ProfileAppBar from "./modules/components/appBar/ProfileAppBar";
 import AppFooter from "./modules/views/AppFooter";
-import MyFeed from "./modules/routes/MyFeed";
-import Pictorant from "./modules/routes/Pictorant";
-
+import Baseline from "./modules/routes/Baseline";
+import ForMixMatch from "./modules/routes/ForMixMatch";
+import Background from "./modules/routes/Background";
 import logo from './logo.svg';
 import './App.css';
 import HistoryAppBar from "./modules/components/appBar/HistoryAppBar";
-import History from "./modules/routes/History";
+import SelView from "./modules/routes/SelView";
 
 function Index() {
   return (
@@ -25,10 +25,10 @@ function Index() {
               </div>
               <div>
                   <Switch>
-                      <Route exact path="/" component={MyFeed} />
-                      <Route path="/myfeed" component={MyFeed} />
-                      <Route path="/history" component={History} />
-                      <Route path="/pictorant" component={Pictorant} />
+                      <Route exact path="/" component={Background} />
+                      <Route path="/baseline" component={Baseline} />
+                      <Route path="/sel_view" component={SelView} />
+                      <Route path="/formixmatch" component={ForMixMatch} />
                   </Switch>
               </div>
               <AppFooter />
