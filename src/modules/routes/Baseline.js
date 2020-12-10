@@ -41,7 +41,7 @@ function Baseline(props) {
     return (
         <div className={classes.root}>
             <Header timerStop={timerStop} numbers={selectedItems.length} sceneType={baseType}/>
-            <GalleryTab sendStop={stopTimer} sole items={getItems} images={items}/>
+            <GalleryTab sendStop={stopTimer} items={getItems} images={items}/>
         </div>
     );
 }

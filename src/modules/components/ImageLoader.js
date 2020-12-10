@@ -1,27 +1,63 @@
 import React from 'react';
 
-const pre_images = [
-    {id: 100, src: '/images/1.jpg', selected: false, type: 'top'},
-    {id: 101, src: '/images/2.jpg', selected: false, type: 'top'},
-    {id: 102, src: '/images/3.jpg', selected: false, type: 'top'},
-    {id: 103, src: '/images/4.jpg', selected: false, type: 'top'},
-    {id: 104, src: '/images/5.jpg', selected: false, type: 'top'},
-    {id: 105, src: '/images/6.jpg', selected: false, type: 'top'},
-    {id: 106, src: '/images/7.jpg', selected: false, type: 'top'},
-    {id: 107, src: '/images/8.jpg', selected: false, type: 'top'},
-    {id: 108, src: '/images/9.jpg', selected: false, type: 'top'},
-    {id: 109, src: '/images/10.jpg', selected: false, type: 'top'},
-    {id: 110, src: '/images/bottom1.jpg', selected: false, type: 'bottom'},
-    {id: 111, src: '/images/bottom2.jpg', selected: false, type: 'bottom'},
-    {id: 112, src: '/images/bottom3.jpg', selected: false, type: 'bottom'},
-    {id: 113, src: '/images/bottom4.jpg', selected: false, type: 'bottom'},
-    {id: 114, src: '/images/bottom5.jpg', selected: false, type: 'bottom'},
-    {id: 115, src: '/images/bottom6.jpg', selected: false, type: 'bottom'},
-    {id: 116, src: '/images/bottom7.jpg', selected: false, type: 'bottom'},
-    {id: 117, src: '/images/bottom8.jpg', selected: false, type: 'bottom'},
-    {id: 118, src: '/images/bottom9.jpg', selected: false, type: 'bottom'},
-    {id: 119, src: '/images/bottom10.jpg', selected: false, type: 'bottom'},
-];
+const pre_images = {
+    top: [
+        {id: 't1', src: '/experiment/zero/top/1.png', selected: false},
+        {id: 't2', src: '/experiment/zero/top/2.png', selected: false},
+        {id: 't3', src: '/experiment/zero/top/3.png', selected: false},
+        {id: 't4', src: '/experiment/zero/top/4.png', selected: false},
+        {id: 't5', src: '/experiment/zero/top/5.png', selected: false},
+        {id: 't6', src: '/experiment/zero/top/6.png', selected: false},
+        {id: 't7', src: '/experiment/zero/top/7.png', selected: false},
+        {id: 't8', src: '/experiment/zero/top/8.png', selected: false},
+        {id: 't9', src: '/experiment/zero/top/9.png', selected: false},
+        {id: 't10', src: '/experiment/zero/top/10.png', selected: false},
+        {id: 't11', src: '/experiment/zero/top/11.png', selected: false},
+        {id: 't12', src: '/experiment/zero/top/12.png', selected: false},
+    ],
+    topFull: [
+        {id: 't1', src: '/experiment/zero/top/full/1.png', selected: false},
+        {id: 't2', src: '/experiment/zero/top/full/2.png', selected: false},
+        {id: 't3', src: '/experiment/zero/top/full/3.png', selected: false},
+        {id: 't4', src: '/experiment/zero/top/full/4.png', selected: false},
+        {id: 't5', src: '/experiment/zero/top/full/5.png', selected: false},
+        {id: 't6', src: '/experiment/zero/top/full/6.png', selected: false},
+        {id: 't7', src: '/experiment/zero/top/full/7.png', selected: false},
+        {id: 't8', src: '/experiment/zero/top/full/8.png', selected: false},
+        {id: 't9', src: '/experiment/zero/top/full/9.png', selected: false},
+        {id: 't10', src: '/experiment/zero/top/full/10.png', selected: false},
+        {id: 't11', src: '/experiment/zero/top/full/11.png', selected: false},
+        {id: 't12', src: '/experiment/zero/top/full/12.png', selected: false},
+    ],
+    bottom: [
+        {id: 'b1', src: '/experiment/zero/bottom/1.png', selected: false},
+        {id: 'b2', src: '/experiment/zero/bottom/2.png', selected: false},
+        {id: 'b3', src: '/experiment/zero/bottom/3.png', selected: false},
+        {id: 'b4', src: '/experiment/zero/bottom/4.png', selected: false},
+        {id: 'b5', src: '/experiment/zero/bottom/5.png', selected: false},
+        {id: 'b6', src: '/experiment/zero/bottom/6.png', selected: false},
+        {id: 'b7', src: '/experiment/zero/bottom/7.png', selected: false},
+        {id: 'b8', src: '/experiment/zero/bottom/8.png', selected: false},
+        {id: 'b9', src: '/experiment/zero/bottom/9.png', selected: false},
+        {id: 'b10', src: '/experiment/zero/bottom/10.png', selected: false},
+        {id: 'b11', src: '/experiment/zero/bottom/11.png', selected: false},
+        {id: 'b12', src: '/experiment/zero/bottom/12.png', selected: false},
+    ],
+    bottomFull: [
+        {id: 'b1', src: '/experiment/zero/bottom/full/1.png', selected: false},
+        {id: 'b2', src: '/experiment/zero/bottom/full/2.png', selected: false},
+        {id: 'b3', src: '/experiment/zero/bottom/full/3.png', selected: false},
+        {id: 'b4', src: '/experiment/zero/bottom/full/4.png', selected: false},
+        {id: 'b5', src: '/experiment/zero/bottom/full/5.png', selected: false},
+        {id: 'b6', src: '/experiment/zero/bottom/full/6.png', selected: false},
+        {id: 'b7', src: '/experiment/zero/bottom/full/7.png', selected: false},
+        {id: 'b8', src: '/experiment/zero/bottom/full/8.png', selected: false},
+        {id: 'b9', src: '/experiment/zero/bottom/full/9.png', selected: false},
+        {id: 'b10', src: '/experiment/zero/bottom/full/10.png', selected: false},
+        {id: 'b11', src: '/experiment/zero/bottom/full/11.png', selected: false},
+        {id: 'b12', src: '/experiment/zero/bottom/full/12.png', selected: false},
+    ],
+}
 
 const one_images = {
     top: [
@@ -139,8 +175,34 @@ const two_images = {
 
 const three_images = {...two_images};
 
+function randomSix(array) {
+    if (! array) {
+        var array = [];
+    }
+    let n = Math.floor(Math.random()*12);
+
+    if (array.length < 6 && array.indexOf(n) < 0) {
+        array.push(n);
+        return randomSix(array);
+    } else if (array.length < 6) {
+        return randomSix(array);
+    } else {
+        return array;
+    }
+}
+
 function preLoader() {
-    return pre_images;
+    const indices = randomSix();
+    let ret_images = {top: [], topFull: [], bottom: [], bottomFull: []};
+
+    indices.map((idx) => {
+        ret_images.top.push(pre_images.top[idx]);
+        ret_images.topFull.push(pre_images.topFull[idx]);
+        ret_images.bottom.push(pre_images.bottom[idx]);
+        ret_images.bottomFull.push(pre_images.bottomFull[idx]);
+    });
+
+    return ret_images;
 }
 
 function oneLoader() {
