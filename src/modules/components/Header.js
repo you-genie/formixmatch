@@ -26,6 +26,9 @@ const useStyles = makeStyles((theme) => ({
         height: '130px',
         marginLeft: theme.spacing(1),
     },
+    clock: {
+      margin: theme.spacing(4),
+    },
     profileIcon: {
         width: '10px',
         height: '10px',
@@ -48,7 +51,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 function ProfileCard(props) {
-    const {timerStop, numbers, sceneType, uid, profile} = props;
+    const {timerStop, sceneType, uid, profile} = props;
     const classes = useStyles();
     const preventDefault = (event) => event.preventDefault();
 
@@ -93,8 +96,13 @@ function ProfileCard(props) {
                                 </Link>
                                 <Grid container direction="row">
                                     {sceneType}
-                                    {!timerStop &&
-                                    <Clock stop={timerStop}/>
+                                    {!timerStop?
+                                        <Clock stop={timerStop}/>:
+                                        <Typography
+                                            variant='h6'
+                                            className={classes.clock}>
+                                            Go To Next
+                                        </Typography>
                                     }
                                 </Grid>
                             </Grid>

@@ -43,9 +43,10 @@ function AppFooter(props) {
                 textColor='primary'
                 variant='fullWidth'
                 centered>
-                <Tab key='baseline' id={0} label={<Link className={classes.button} to='/baseline'><Button large className={classes.button}>Type 1</Button></Link>} />
-                <Tab key='sel_view' id={1} label={<Link className={classes.button} to='/sel_view'><Button large className={classes.button}>Type 2</Button></Link>} />
-                <Tab key='formixmatch' id={2} label={<Link className={classes.button} to='/formixmatch'><Button large className={classes.button}>Type 3</Button></Link>} />
+                <Tab key='baseline' id={0} label={<Link className={classes.button} to='/1'><Button large className={classes.button}>Type 0</Button></Link>} />
+                <Tab key='6row' id={1} label={<Link className={classes.button} to='/2'><Button large className={classes.button}>Type 1</Button></Link>} />
+                <Tab key='select' id={2} label={<Link className={classes.button} to='/3'><Button large className={classes.button}>Type 2</Button></Link>} />
+                <Tab key='formixmatch' id={3} label={<Link className={classes.button} to='/4'><Button large className={classes.button}>Type 3</Button></Link> } />
             </Tabs>
         </AppBar>
     </div>);

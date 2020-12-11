@@ -173,26 +173,90 @@ const two_images = {
     ],
 };
 
-const three_images = {...two_images};
+const three_images = {
+    top: [
+        {id: 't1', src: '/experiment/three/top/top1.png', selected: false},
+        {id: 't2', src: '/experiment/three/top/top2.png', selected: false},
+        {id: 't3', src: '/experiment/three/top/top3.png', selected: false},
+        {id: 't4', src: '/experiment/three/top/top4.png', selected: false},
+        {id: 't5', src: '/experiment/three/top/top5.png', selected: false},
+        {id: 't6', src: '/experiment/three/top/top6.png', selected: false},
+    ],
+    bottom: [
+        {id: 'b1', src: '/experiment/three/bottom/bottom1.png', selected: false},
+        {id: 'b2', src: '/experiment/three/bottom/bottom2.png', selected: false},
+        {id: 'b3', src: '/experiment/three/bottom/bottom3.png', selected: false},
+        {id: 'b4', src: '/experiment/three/bottom/bottom4.png', selected: false},
+        {id: 'b5', src: '/experiment/three/bottom/bottom5.png', selected: false},
+        {id: 'b6', src: '/experiment/three/bottom/bottom6.png', selected: false},
+    ],
+    mixMatch: [
+        {id: '11', src: '/experiment/three/11.png', top: 't1', bottom: 'b1'},
+        {id: '12', src: '/experiment/three/12.png', top: 't2', bottom: 'b1'},
+        {id: '13', src: '/experiment/three/13.png', top: 't3', bottom: 'b1'},
+        {id: '14', src: '/experiment/three/14.png', top: 't4', bottom: 'b1'},
+        {id: '15', src: '/experiment/three/15.png', top: 't5', bottom: 'b1'},
+        {id: '16', src: '/experiment/three/16.png', top: 't6', bottom: 'b1'},
+        {id: '21', src: '/experiment/three/21.png', top: 't1', bottom: 'b2'},
+        {id: '22', src: '/experiment/three/22.png', top: 't2', bottom: 'b2'},
+        {id: '23', src: '/experiment/three/23.png', top: 't3', bottom: 'b2'},
+        {id: '24', src: '/experiment/three/24.png', top: 't4', bottom: 'b2'},
+        {id: '25', src: '/experiment/three/25.png', top: 't5', bottom: 'b2'},
+        {id: '26', src: '/experiment/three/26.png', top: 't6', bottom: 'b2'},
+        {id: '31', src: '/experiment/three/31.png', top: 't1', bottom: 'b3'},
+        {id: '32', src: '/experiment/three/32.png', top: 't2', bottom: 'b3'},
+        {id: '33', src: '/experiment/three/33.png', top: 't3', bottom: 'b3'},
+        {id: '34', src: '/experiment/three/34.png', top: 't4', bottom: 'b3'},
+        {id: '35', src: '/experiment/three/35.png', top: 't5', bottom: 'b3'},
+        {id: '36', src: '/experiment/three/36.png', top: 't6', bottom: 'b3'},
+        {id: '41', src: '/experiment/three/41.jpg', top: 't1', bottom: 'b4'},
+        {id: '42', src: '/experiment/three/42.jpg', top: 't2', bottom: 'b4'},
+        {id: '43', src: '/experiment/three/43.jpg', top: 't3', bottom: 'b4'},
+        {id: '44', src: '/experiment/three/44.jpg', top: 't4', bottom: 'b4'},
+        {id: '45', src: '/experiment/three/45.jpg', top: 't5', bottom: 'b4'},
+        {id: '46', src: '/experiment/three/46.jpg', top: 't6', bottom: 'b4'},
+        {id: '51', src: '/experiment/three/51.jpg', top: 't1', bottom: 'b5'},
+        {id: '52', src: '/experiment/three/52.jpg', top: 't2', bottom: 'b5'},
+        {id: '53', src: '/experiment/three/53.jpg', top: 't3', bottom: 'b5'},
+        {id: '54', src: '/experiment/three/54.jpg', top: 't4', bottom: 'b5'},
+        {id: '55', src: '/experiment/three/55.jpg', top: 't5', bottom: 'b5'},
+        {id: '56', src: '/experiment/three/56.jpg', top: 't6', bottom: 'b5'},
+        {id: '61', src: '/experiment/three/61.jpg', top: 't1', bottom: 'b6'},
+        {id: '62', src: '/experiment/three/62.jpg', top: 't2', bottom: 'b6'},
+        {id: '63', src: '/experiment/three/63.jpg', top: 't3', bottom: 'b6'},
+        {id: '64', src: '/experiment/three/64.jpg', top: 't4', bottom: 'b6'},
+        {id: '65', src: '/experiment/three/65.jpg', top: 't5', bottom: 'b6'},
+        {id: '66', src: '/experiment/three/66.jpg', top: 't6', bottom: 'b6'},
+    ],
+};
 
-function randomSix(array) {
+function randomArray(num, max, array) {
     if (! array) {
         var array = [];
     }
-    let n = Math.floor(Math.random()*12);
+    let n = Math.floor(Math.random()*max);
 
     if (array.length < 6 && array.indexOf(n) < 0) {
         array.push(n);
-        return randomSix(array);
-    } else if (array.length < 6) {
-        return randomSix(array);
+        return randomArray(num, max, array);
+    } else if (array.length < num) {
+        return randomArray(num, max, array);
     } else {
         return array;
     }
 }
 
+const indices = randomArray(3, 3);
+console.log(indices);
+const datasets = [one_images, two_images, three_images];
+
+var dataset1 = datasets[indices[0]];
+var dataset2 = datasets[indices[1]];
+var dataset3 = datasets[indices[2]];
+
+
 function preLoader() {
-    const indices = randomSix();
+    const indices = randomArray(6, 12);
     let ret_images = {top: [], topFull: [], bottom: [], bottomFull: []};
 
     indices.map((idx) => {
@@ -206,15 +270,15 @@ function preLoader() {
 }
 
 function oneLoader() {
-    return one_images;
+    return dataset1;
 }
 
 function twoLoader() {
-    return two_images;
+    return dataset2;
 }
 
 function threeLoader() {
-    return three_images;
+    return dataset3;
 }
 
 function randomLoader() {
@@ -229,4 +293,15 @@ function randomLoader() {
     }
 }
 
-export {preLoader, oneLoader, twoLoader, threeLoader, randomLoader};
+function anyLoader(idx) {
+    switch (idx) {
+        case 0:
+            return one_images;
+        case 1:
+            return two_images;
+        case 2:
+            return three_images;
+    }
+}
+
+export {randomArray, preLoader, oneLoader, twoLoader, threeLoader, randomLoader, anyLoader};

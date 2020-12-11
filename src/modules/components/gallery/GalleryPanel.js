@@ -43,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }))
 function GalleryPanel(props) {
-    const { children, reset, sole, images, selectedImages, ...other } = props;
+    const { children, reset, images, imageSelectHandler, ...other } = props;
     const classes = useStyles();
 
     const toggleImage = (id) => {
@@ -51,7 +51,7 @@ function GalleryPanel(props) {
         let idx = data.findIndex((n) => n.id == id);
         data[idx].selected = !data[idx].selected;
 
-        selectedImages(data);
+        imageSelectHandler(data);
     }
 
 
@@ -70,41 +70,38 @@ function GalleryPanel(props) {
     );
 
     return (
-
-                <Grid
-                    container
-                    justify='center'
-                    className={classes.root}>
-                    <Grid
-                        container
-                        className={classes.gridRoot}
-                        justify='center'>
-                        <GridList
-                            spacing={50}
-                            cellHeight={'auto'}
-                            cols={sole?6:4}
-                            className={sole?classes.gridCondensed:classes.gridList}>
-                            {images.map((tile) => (
-                                <GridListTile
-                                    key={tile.id}
-                                    rows={1}
-                                    onClick={() => toggleImage(tile.id)}
-                                    cols={1}>
-                                    <img src={tile.src} className={tile.selected?classes.image_checked:classes.image}/>
-                                    <GridListTileBar
-                                        className={classes.titleBar}
-                                        titlePosition='top'
-                                        actionIcon={
-                                            tile.selected?checked:unchecked
-                                        }
-                                        actionPosition='right'/>
-                                </GridListTile>
-
-                            ))}
-                        </GridList>
-                    </Grid>
-                </Grid>
-
+        <Grid
+            container
+            justify='center'
+            className={classes.root}>
+            <Grid
+                container
+                className={classes.gridRoot}
+                justify='center'>
+                <GridList
+                    spacing={50}
+                    cellHeight={'auto'}
+                    cols={6}
+                    className={classes.gridList}>
+                    {images.map((tile) => (
+                        <GridListTile
+                            key={tile.id}
+                            rows={1}
+                            onClick={() => toggleImage(tile.id)}
+                            cols={1}>
+                            <img src={tile.src} className={tile.selected?classes.image_checked:classes.image}/>
+                            <GridListTileBar
+                                className={classes.titleBar}
+                                titlePosition='top'
+                                actionIcon={
+                                    tile.selected?checked:unchecked
+                                }
+                                actionPosition='right'/>
+                        </GridListTile>
+                    ))}
+                </GridList>
+            </Grid>
+        </Grid>
     );
 }
 

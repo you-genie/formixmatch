@@ -2,10 +2,10 @@ import React from 'react';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary';
 import AssignmentIndOutlinedIcon from '@material-ui/icons/AssignmentIndOutlined';
-import imageLoader from "../components/images";
-import selectedImageLoader from '../components/selected_images';
-import GalleryPanel from "../components/Gallery";
-import CrossGalleryPanel from "../components/SelectiveGallery";
+import imageLoader from "../images";
+import selectedImageLoader from '../selected_images';
+import GalleryPanel from "./GalleryPanel";
+import CrossGalleryPanel from "./CrossGalleryPanel";
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 function GalleryTab(props) {
-    const {items, sole, all, sendStop} = props;
+    const {items, all, sendStop} = props;
     const classes = useStyles();
     const theme = useTheme();
 
@@ -133,7 +133,7 @@ function GalleryTab(props) {
             <Grid
                 container
                 direction='row'>
-                <Grid className={classes.tabGrid} item xs={sole?12:4}>
+                <Grid className={classes.tabGrid} item xs={4}>
                     <Grid container direction='row' justify='space-around' className={classes.mainTabGrid}>
                         {all? (
                             <Grid item xs={6}>
@@ -147,28 +147,20 @@ function GalleryTab(props) {
                         <Button onClick={flush}>Refresh </Button>
                     </Grid>
                 </Grid>
-                {!sole &&
-                    <Grid className={classes.tabGrid} item xs={8}>
-                        <Grid container direction='row' justify='space-around' className={classes.tabGrid}>
-                            <div className={classes.tab}>Crossed Items</div>
-                        </Grid>
+                <Grid className={classes.tabGrid} item xs={8}>
+                    <Grid container direction='row' justify='space-around' className={classes.tabGrid}>
+                        <div className={classes.tab}>Crossed Items</div>
                     </Grid>
-                }
+                </Grid>
             </Grid>
             <Grid
                 container
                 direction='row'>
-                <Grid item xs={sole?12:4}>
-                {sole?
-                <GalleryPanel sole images={images} selectedImages={handleImageChange} value={value} index={0} dir={theme.direction}>
+                <Grid item xs={4}>
+                <GalleryPanel images={images} selectedImages={handleImageChange} value={value} index={0} dir={theme.direction}>
                     Item One
                 </GalleryPanel>
-                :<GalleryPanel images={images} selectedImages={handleImageChange} value={value} index={0} dir={theme.direction}>
-                    Item One
-                </GalleryPanel>
-                }
                 </Grid>
-                {!sole && 
                 <Grid item xs={8}>
                 {all?
                     (<CrossGalleryPanel crossImages={allCrossImages} w={allW}></CrossGalleryPanel>)
@@ -178,7 +170,6 @@ function GalleryTab(props) {
                     </CrossGalleryPanel>)
                 }
                 </Grid>
-                }
             </Grid>
         </div>
     )

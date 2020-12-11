@@ -1,9 +1,10 @@
 import React from 'react';
 import {withStyles} from '@material-ui/core/styles';
 import Header from "../components/Header";
-import OneByOneGalleryTab from "../components/gallery/OneByOneGalleryTab";
+import {twoLoader} from "../components/ImageLoader";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
+import Experiment2GAlleryTab from "../components/gallery/Experiment2GAlleryTab";
 
 const styles = (theme) => ({
     root: {
@@ -18,9 +19,8 @@ const styles = (theme) => ({
     },
 })
 
-function Baseline(props) {
-	const { classes } = props;
-    const [selectedItems, setSelectedItems] = React.useState([]);
+function SelView(props) {
+    const { classes } = props;
     const [timerStop, setTimerStop] = React.useState(false);
     const stopTimer = () => {
         setTimerStop(true)
@@ -28,20 +28,19 @@ function Baseline(props) {
 
     const baseType = (
         <Grid item className={classes.typeStyle} alignItems="flex-end">
-        <Typography
-            className={classes.typeTypoStyle}
-            variant='h3'>
-            Type 1
-        </Typography>
+            <Typography
+                className={classes.typeTypoStyle}
+                variant='h3'>
+                Type 2
+            </Typography>
         </Grid>
     )
-    const getItems = (data) => {setSelectedItems(data)}
     return (
         <div className={classes.root}>
-            <Header timerStop={timerStop} numbers={selectedItems.length} sceneType={baseType}/>
-            <OneByOneGalleryTab sendStop={stopTimer} giveItems={getItems}/>
+            <Header timerStop={timerStop} sceneType={baseType}/>
+            <Experiment2GAlleryTab sendStop={stopTimer}/>
         </div>
     );
 }
 
-export default withStyles(styles)(Baseline);
+export default withStyles(styles)(SelView);
