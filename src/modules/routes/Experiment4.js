@@ -4,7 +4,6 @@ import Header from "../components/Header";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import Experiment4GalleryTab from "../components/gallery/Experiment4GalleryTab";
-import Experiment4 from "./Experiment4";
 
 const styles = (theme) => ({
     root: {
@@ -19,7 +18,7 @@ const styles = (theme) => ({
     },
 })
 
-function SelView(props) {
+function Experiment4(props) {
     const { classes } = props;
     const [timerStop, setTimerStop] = React.useState(false);
     const stopTimer = () => {
@@ -31,7 +30,7 @@ function SelView(props) {
             <Typography
                 className={classes.typeTypoStyle}
                 variant='h3'>
-                Type 3
+                Type 3 - Experiment Cross Images ALL-SHOW
             </Typography>
         </Grid>
     )
@@ -43,4 +42,4 @@ function SelView(props) {
     );
 }
 
-export default withStyles(styles)(SelView);
+export default withStyles(styles)(Experiment4);

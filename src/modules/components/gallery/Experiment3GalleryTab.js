@@ -23,11 +23,14 @@ const useStyles = makeStyles((theme) => ({
         textAlign: 'center',
         padding: theme.spacing(1),
         backgroundColor: 'lavenderblush'
+    },
+    button: {
+        color: 'red'
     }
 }))
 
 function Experiment3GalleryTab(props) {
-    const {giveItems, sendStop} = props;
+    const {sendStop} = props;
     const classes = useStyles();
     const theme = useTheme();
 
@@ -77,11 +80,7 @@ function Experiment3GalleryTab(props) {
         console.log('Selected topXbottom: (' + (topLength) + ', ' + (bottomLength) + ')');
     }
 
-    const allImages = genAllImages();
-
-
     const flush = () => {
-        giveItems([]);
         flushImages();
     }
 
@@ -132,7 +131,7 @@ function Experiment3GalleryTab(props) {
                 <Grid className={classes.tabGrid} item xs={6}>
                     <Grid container direction='row' justify='space-around' className={classes.mainTabGrid}>
                         <Button className={classes.tabButton} onClick={setDisplayImages}>Select Items</Button>
-                        <Button onClick={submit}>Submit {iter+1}th item</Button>
+                        <Button className={classes.button} onClick={submit}>Buy {iter+1}th item</Button>
                         <Button onClick={flush}>Refresh </Button>
                     </Grid>
                 </Grid>

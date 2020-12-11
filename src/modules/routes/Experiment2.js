@@ -19,7 +19,7 @@ const styles = (theme) => ({
     },
 })
 
-function SelView(props) {
+function Experiment2(props) {
     const { classes } = props;
     const [timerStop, setTimerStop] = React.useState(false);
     const stopTimer = () => {
@@ -31,7 +31,7 @@ function SelView(props) {
             <Typography
                 className={classes.typeTypoStyle}
                 variant='h3'>
-                Type 2
+                Type 1 - Experiment Multi-Items
             </Typography>
         </Grid>
     )
@@ -43,4 +43,4 @@ function SelView(props) {
     );
 }
 
-export default withStyles(styles)(SelView);
+export default withStyles(styles)(Experiment2);

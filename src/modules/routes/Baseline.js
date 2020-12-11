@@ -31,7 +31,7 @@ function Baseline(props) {
         <Typography
             className={classes.typeTypoStyle}
             variant='h3'>
-            Type 1
+            Baseline - Experiment One-By-One
         </Typography>
         </Grid>
     )

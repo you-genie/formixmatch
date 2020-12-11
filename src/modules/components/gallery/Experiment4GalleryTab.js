@@ -23,6 +23,9 @@ const useStyles = makeStyles((theme) => ({
         textAlign: 'center',
         padding: theme.spacing(1),
         backgroundColor: 'lavenderblush'
+    },
+    button: {
+        color: 'red'
     }
 }))
 
@@ -117,7 +120,7 @@ function Experiment2GalleryTab(props) {
                         <Grid item xs={6}>
                             <div className={classes.tab}>Select Items</div>
                         </Grid>
-                        <Button onClick={submit}>Submit {iter+1}th item</Button>
+                        <Button className={classes.button} onClick={submit}>Buy {iter+1}th item</Button>
                         <Button onClick={flushImages}>Refresh </Button>
                     </Grid>
                 </Grid>

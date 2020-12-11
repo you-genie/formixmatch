@@ -50,7 +50,6 @@ function CrossGalleryPanel(props) {
                 className={classes.gridRoot}
                 justify='center'>
                 <GridList
-                    spacing={40}
                     cellHeight={'auto'}
                     cols={w+1}
                     className={classes.gridList}>

@@ -246,7 +246,12 @@ function randomArray(num, max, array) {
     }
 }
 
+var experiment_indices = randomArray(4, 4);
+experiment_indices = experiment_indices.map((n) => {return n + 1;});
+console.log("experiment 순서");
+console.log(experiment_indices);
 const indices = randomArray(3, 3);
+console.log("dataset log");
 console.log(indices);
 const datasets = [one_images, two_images, three_images];
 

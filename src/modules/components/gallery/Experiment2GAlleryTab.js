@@ -23,6 +23,9 @@ const useStyles = makeStyles((theme) => ({
         textAlign: 'center',
         padding: theme.spacing(1),
         backgroundColor: 'lavenderblush'
+    },
+    button: {
+        color: 'red',
     }
 }))
 
@@ -55,13 +58,19 @@ function Experiment2GalleryTab(props) {
     const [value, setValue] = React.useState(0);
     const [width, setWidth] = React.useState(0);
 
-    const getSelectedCrossImages = () => {
+    const setDisplayImages = () => {
+        if (selectedTop.length + selectedBottom.length > 0) {
+            setWidth(7);
+        } else {
+            setWidth(0);
+        }
+
         let newCrossImages = [];
 
         selectedTop.map((top) => {
             newCrossImages.push(top);
             let topFull = dataset.mixMatch.filter((n) => {
-                return n.top === top.id;
+                return n.top == top.id;
             })
             Array.prototype.push.apply(newCrossImages, topFull);
         })
@@ -69,21 +78,13 @@ function Experiment2GalleryTab(props) {
         selectedBottom.map((bottom) => {
             newCrossImages.push(bottom);
             let bottomFull = dataset.mixMatch.filter((n) => {
-                return n.bottom === bottom.id;
+                return n.bottom == bottom.id;
             })
             Array.prototype.push.apply(newCrossImages, bottomFull);
         })
+        console.log(newCrossImages);
 
-        return newCrossImages;
-    }
-
-    const setDisplayImages = () => {
-        if (selectedTop.length + selectedBottom.length > 0) {
-            setWidth(7);
-        } else {
-            setWidth(0);
-        }
-        setCrossImages(getSelectedCrossImages());
+        setCrossImages(newCrossImages);
     }
 
     const flush = () => {
@@ -143,7 +144,7 @@ function Experiment2GalleryTab(props) {
                 <Grid className={classes.tabGrid} item xs={6}>
                     <Grid container direction='row' justify='space-around' className={classes.mainTabGrid}>
                         <Button className={classes.tabButton} onClick={setDisplayImages}>Select Items</Button>
-                        <Button onClick={submit}>Submit {iter+1}th item</Button>
+                        <Button className={classes.button} onClick={submit}>Buy {iter+1}th item</Button>
                         <Button onClick={flushImages}>Refresh </Button>
                     </Grid>
                 </Grid>

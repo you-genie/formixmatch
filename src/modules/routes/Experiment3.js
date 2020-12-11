@@ -18,7 +18,7 @@ const styles = (theme) => ({
     },
 })
 
-function SelView(props) {
+function Experiment3(props) {
     const { classes } = props;
     const [timerStop, setTimerStop] = React.useState(false);
     const stopTimer = () => {
@@ -30,7 +30,7 @@ function SelView(props) {
             <Typography
                 className={classes.typeTypoStyle}
                 variant='h3'>
-                Type 3
+                Type 2 - Experiment User-Select Crossed Images
             </Typography>
         </Grid>
     )
@@ -42,4 +42,4 @@ function SelView(props) {
     );
 }
 
-export default withStyles(styles)(SelView);
+export default withStyles(styles)(Experiment3);

@@ -11,6 +11,7 @@ import ProfileImg from '../../assets/icons/profile.jpg'
 const styles = (theme) => ({
     root: {
         top: 'auto',
+        height: '100px',
         bottom: 0,
     },
     button: {
@@ -43,10 +44,10 @@ function AppFooter(props) {
                 textColor='primary'
                 variant='fullWidth'
                 centered>
-                <Tab key='baseline' id={0} label={<Link className={classes.button} to='/1'><Button large className={classes.button}>Type 0</Button></Link>} />
-                <Tab key='6row' id={1} label={<Link className={classes.button} to='/2'><Button large className={classes.button}>Type 1</Button></Link>} />
-                <Tab key='select' id={2} label={<Link className={classes.button} to='/3'><Button large className={classes.button}>Type 2</Button></Link>} />
-                <Tab key='formixmatch' id={3} label={<Link className={classes.button} to='/4'><Button large className={classes.button}>Type 3</Button></Link> } />
+                <Tab key='baseline' id={0} label={<Link className={classes.button} to='/1'><Button large className={classes.button}>Exp 1</Button></Link>} />
+                <Tab key='6row' id={1} label={<Link className={classes.button} to='/2'><Button large className={classes.button}>Exp 2</Button></Link>} />
+                <Tab key='select' id={2} label={<Link className={classes.button} to='/3'><Button large className={classes.button}>Exp 3</Button></Link>} />
+                <Tab key='formixmatch' id={3} label={<Link className={classes.button} to='/4'><Button large className={classes.button}>Exp 4</Button></Link> } />
             </Tabs>
         </AppBar>
     </div>);

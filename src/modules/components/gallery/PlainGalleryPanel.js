@@ -36,9 +36,8 @@ const useStyles = makeStyles((theme) => ({
     }
 }))
 function PlainGalleryPanel(props) {
-    const { w, crossImages} = props;
+    const { children, w, crossImages, ...other} = props;
     const classes = useStyles();
-
     return (
 
         <Grid
@@ -55,18 +54,18 @@ function PlainGalleryPanel(props) {
                     cols={w}
                     className={classes.gridList}>
 
-                    {crossImages.length === 0?
-                        <Typography variant="subtitle1">Please select Tops and Bottoms to see crossed clothes!!</Typography>
+                    {w==0?
+                        (<Typography variant="subtitle1">Please select Tops and Bottoms to see crossed clothes!!</Typography>)
                         :
-                        crossImages.map((tile) => (
+                        (crossImages.map((tile, idx) => (
                             <GridListTile
-                                key={tile.id}
+                                key={tile.id + idx}
                                 rows={1}
                                 cols={1}>
                                 <img src={tile.src} className={classes.image}/>
                             </GridListTile>
 
-                        ))}
+                        )))}
                 </GridList>
 
             </Grid>

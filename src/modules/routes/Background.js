@@ -44,7 +44,7 @@ function Baseline(props) {
             <div className={classes.root}>
                 <Banner />
                 <Grid item className={classes.startbutton} justify="center" spacing={5}>
-                    <Link to="/baseline" style={{textDecoration: 'none'}}>
+                    <Link to="/1" style={{textDecoration: 'none'}}>
                         <Button>
                             Start Experiment
                         </Button>
